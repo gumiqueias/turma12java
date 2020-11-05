@@ -12,18 +12,16 @@ programa
 		{
 			para (y = 0; y<coluna; y++)// coluna
 			{
-				n1[x][y] = Util.sorteia(1, 20)
+				n1[x][y] = Util.sorteia(0, 10)
+				n2[x][y] = Util.sorteia(0, 10)
 			}
 		}	
 		para (x = 0; x<linha; x++)// linha
 		{
 			para (y = 0; y<coluna; y++)// coluna
 			{
-				n2[x][y] = Util.sorteia(1, 20)
 				m1[x][y] = n1[x][y] + n2[x][y]
-				m2[x][y] = n1[x][y] - n2[x][y]								
-				
-										
+				m2[x][y] = n1[x][y] - n2[x][y]																						
 			}
 			
 		}
@@ -31,7 +29,7 @@ programa
 			
 			para (y = 0; y<coluna; y++)
 			{
-				
+			
 			escreva (m1[x][y])
 				escreva (" ")
 			}
@@ -48,11 +46,7 @@ programa
 			}
 			
 			escreva ("\n\n")
-		}
-		
-			
-
-				
+		}				
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -60,7 +54,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 871; 
+ * @POSICAO-CURSOR = 373; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
