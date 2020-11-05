@@ -44,7 +44,7 @@ programa
 			escreva (vetor[x]+" ")			
 		}
 		escreva ("\n\n")
-		escreva ("\nMultiplicação\n")
+		escreva ("\nMULTIPLICAÇÃO\n")
 		
 		vetor[0] = vetor[0] * matriz[0][0]
 		vetor[1] = vetor[1] * matriz[0][1]
@@ -63,7 +63,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 924; 
+ * @POSICAO-CURSOR = 720; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
