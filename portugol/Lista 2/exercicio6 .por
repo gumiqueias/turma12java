@@ -17,7 +17,7 @@ programa
 			}
 	
 			senao se (idade>= 12 e idade<= 13) {
-				escreva ("\nCom sua idade, você pertence ao grupo juvenil A de 12 a 13 anos")
+				escreva ("\nCom sua idade, você pertence ao grupo juvenil A de 12 a 13 anos ")
 			}			
 			
 			senao se (idade>= 14 e idade <= 17){
@@ -42,7 +42,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 45; 
+ * @POSICAO-CURSOR = 478; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
