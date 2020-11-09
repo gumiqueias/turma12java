@@ -12,7 +12,7 @@ programa
 		inteiro estoque[minimo] = {10,10,10,10,10,10,10,10,10,10}
 		//CODIGOS E VALOR DOS PRODUTOS
 		real valor[minimo] = {40.00, 30.00, 20.00, 30.00, 30.00, 25.00, 20.00, 20.00, 10.00, 10.00};
-		inteiro codigo[minimo] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		inteiro codigo[minimo] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, vezes = 0
 		real valorCompras[minimo];
 		real valorTotal = 0.0, imp = 0.0, valorAtualizado = 0.0
 		//PRODUTOS DA NOSSA LOJA
@@ -21,7 +21,7 @@ programa
 		cadeia compras[minimo];
 		caracter dinheiro, cheque, credito, parcelas, juros, notaFiscal, empresa, imposto, totalPagar, confirmacao, novoUser;
 		cadeia pag, parc
-		logico user = verdadeiro;
+		logico user = verdadeiro
 
 		enquanto(user == verdadeiro) {
 		escreva ("---------LOJAS LUIS VINTÃO-----------\n")
@@ -36,7 +36,7 @@ programa
 			leia(codigo[x]);
 		
 				se(codigo[x] == 1){
-					estoque[x] = estoque[x] -1
+					estoque[0] = estoque[0] -1
 					compras[x] = produtos[0]
 					valorCompras[x] = valor[0]
 					escreva("O produto ","'",produtos[0],"'", " foi adicionado ao carrinho.\n")
@@ -49,7 +49,7 @@ programa
 					}
 				}
 				se(codigo[x] == 2){
-					estoque[x] = estoque[x] -1
+					estoque[1] = estoque[1] -1
 					compras[x] = produtos[1]
 					valorCompras[x] = valor[1]
 					escreva("O produto ","'",produtos[1],"'", " foi adicionado ao carrinho.\n")
@@ -62,7 +62,7 @@ programa
 					}
 				}
 				se(codigo[x] == 3){
-					estoque[x]= estoque[x] -1
+					estoque[2]= estoque[2] -1
 					compras[x] = produtos[2]
 					valorCompras[x] = valor[2]
 					escreva("O produto ","'",produtos[2],"'", " foi adicionado ao carrinho.\n")
@@ -75,7 +75,7 @@ programa
 					}
 				}
 				se(codigo[x] == 4){
-					estoque[x] = estoque[x] -1
+					estoque[3] = estoque[3] -1
 					compras[x] = produtos[3]
 					valorCompras[x] = valor[3]
 					escreva("O produto ","'",produtos[3],"'", " foi adicionado ao carrinho.\n")
@@ -88,7 +88,7 @@ programa
 					}
 				}
 				se(codigo[x] == 5){
-					estoque[x] = estoque[x] -1
+					estoque[4] = estoque[4] -1
 					compras[x]= produtos[4]
 					valorCompras[x] = valor[4]
 					escreva("O produto ","'",produtos[4],"'", " foi adicionado ao carrinho.\n")
@@ -101,7 +101,7 @@ programa
 					}
 				}
 				se(codigo[x] == 6){
-					estoque[x] = estoque[x] -1
+					estoque[5] = estoque[5] -1
 					compras[x] = produtos[5]
 					valorCompras[x] = valor[5]
 					escreva("O produto ","'",produtos[5],"'", " foi adicionado ao carrinho.\n")
@@ -114,7 +114,7 @@ programa
 					}
 				}
 				se(codigo[x] == 7){
-					estoque[x] = estoque[x] -1
+					estoque[6] = estoque[6] -1
 					compras[x] = produtos[6]
 					valorCompras[x] = valor[6]
 					escreva("O produto ","'",produtos[6],"'", " foi adicionado ao carrinho.\n")
@@ -127,7 +127,7 @@ programa
 					}
 				}
 				se(codigo[x] == 8){
-					estoque[x] = estoque[x] -1
+					estoque[7] = estoque[7] -1
 					compras[x] = produtos[7]
 					valorCompras[x] = valor[7]
 					escreva("O produto ","'",produtos[7],"'", " foi adicionado ao carrinho.\n")
@@ -140,7 +140,7 @@ programa
 					}
 				}
 				se(codigo[x] == 9){
-					estoque[x] = estoque[x] -1
+					estoque[8] = estoque[8] -1
 					compras[x] = produtos[8]
 					valorCompras[x] = valor[8]
 					escreva("O produto ","'",produtos[8],"'", " foi adicionado ao carrinho.\n")
@@ -154,7 +154,7 @@ programa
 					
 				}
 				se(codigo[x] == 10){
-					estoque[x] = estoque[x] -1
+					estoque[9] = estoque[9] -1
 					compras[x] = produtos[9]
 					valorCompras[x] = valor[9]
 					escreva("O produto ","'",produtos[9],"'", " foi adicionado ao carrinho.\n")
@@ -187,14 +187,12 @@ programa
 			{
 				valorAtualizado = valorTotal * 0.20
 				valorTotal = valorTotal - valorAtualizado
-				escreva ("\nO valor a ser pago é de: R$ " , valorTotal, " com desconto de 20%\n.")
 			}
 
 			se (pag == "AC" ou pag == "ac")
 			{
 				valorAtualizado = valorTotal * 0.15
 				valorTotal = valorTotal - valorAtualizado
-				escreva ("\nO valor a ser pago é de: R$ " , valorTotal, " com desconto de 15%\n.")
 			}
 
 			se (pag == "CC" ou  pag == "cc")
@@ -204,14 +202,16 @@ programa
 
 				se (parc == "2x" ou parc == "2")
 				{
-					escreva ("\nO valor a ser pago é de: R$ " , valorTotal, " parcelado em 2x.\n")
+					vezes = 1
+					
 				}
 
 				senao se (parc == "3x" ou parc == "3")
 				{
+					vezes = 2
+					
 					valorAtualizado = valorTotal*0.10
 					valorTotal = valorTotal + valorAtualizado
-					escreva ("\nO valor a ser pago é de: R$ " , valorTotal, " parcelado em 3x com juros de 10%.\n")
 				}
 		
 			}
@@ -228,8 +228,28 @@ programa
 				escreva("------------------------------------------------\n")
 				escreva(x + 1," - ",compras[x],"\t","R$ ", valorCompras[x],"\n")				
 				}
-				escreva ("\n---------IMPOSTOS PAGOS = " + imp + " -----------\n")	
-				escreva ("\n\n---------TOTAL A SER PAGO = " + valorTotal + " -----------\n")
+				escreva ("\n---------IMPOSTOS PAGOS = " + imp + " -----------\n")					
+				
+				se (vezes == 1)
+				{ 
+					escreva ("\n\n---------TOTAL A SER PAGO = R$ " + valorTotal + " -----------\n")
+					
+					valorTotal =mat.arredondar((valorTotal / 2), 2)
+					
+					escreva ("\n\n---------PARCELADO EM 2X DE R$ " + valorTotal + " -----------\n")
+				}
+				senao se (vezes == 2)
+				{ 
+					escreva ("\n\n---------TOTAL A SER PAGO = R$ " + valorTotal + " -----------\n")
+					
+					valorTotal =mat.arredondar((valorTotal / 3), 2)
+					
+					escreva ("\n\n---------PARCELADO EM 3X DE R$ " + valorTotal + " -----------\n")
+				}
+				senao
+				{
+					escreva ("\n\n---------TOTAL A SER PAGO = R$ " + valorTotal + " -----------\n")
+				}
 				escreva ("\n\n---------OBRIGADO E VOLTE SEMPRE -----------\n")
 				
 			}
@@ -237,14 +257,16 @@ programa
 				
 				escreva ("\n\n---------OBRIGADO E VOLTE SEMPRE -----------\n\n")
 			}
-			escreva("Deseja continuar com novas compras ? (S/N)" );
+			escreva("\nDeseja continuar com novas compras ? (S/N)" );
 			leia(novoUser)
 			se (novoUser == 'S' ou novoUser == 's') {
 				limpa();
 				user = verdadeiro;
-			} senao {
+			} senao 			{
 				user = falso;	
 			}
+
+			
 		}
 	}
 }
@@ -253,7 +275,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5539; 
+ * @POSICAO-CURSOR = 607; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
