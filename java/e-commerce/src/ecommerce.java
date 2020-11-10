@@ -27,7 +27,7 @@ public class ecommerce {
 		String compras[] = new String [minimo];
 		char dinheiro, cheque, credito, parcelas, juros, notaFiscal, empresa, imposto, totalPagar, confirmacao, novoUser;
 		String pag, parc;
-		boolean user = true;
+		boolean user = feminino;
 
 		// CODIGO DOS PRODUTOS
 		

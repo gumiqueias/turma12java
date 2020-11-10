@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		real v = 0, soma = 0, n, = 0, m = 0
+		real v = 0, soma = 0, n = 0, m = 0
 					
 		
 		enquanto(v >= 0)
@@ -24,7 +24,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 245; 
+ * @POSICAO-CURSOR = 75; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
