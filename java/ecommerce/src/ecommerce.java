@@ -245,9 +245,14 @@ public class ecommerce {
 				for (x = 0; x < minimo; x++ )
 				{
 					valorTotal = valorTotal + valorCompras[x];
-					System.out.println("------------------------------------------------\n");
-					System.out.println((x + 1)+" - "+compras[x]+"\t"+"R$ "+ valorCompras[x]+"\n");
 					
+					if ((compras[x] != null) && (valorCompras[x] > 0)) 
+					{
+										
+					System.out.println((x + 1)+" - "+compras[x]+"\t"+"R$ "+ valorCompras[x]+"\n");
+					System.out.println("------------------------------------------------\n");
+					
+					}
 				}
 				
 				imp = (valorTotal*0.09);
