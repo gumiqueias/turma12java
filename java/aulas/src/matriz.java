@@ -33,7 +33,7 @@ public class matriz {
 				matriz [x][dias] = leia.nextLine();
 				
 								
-				if (matriz [x][dias].equals("sair") || matriz [x][dias].equals("SAIR") )
+				if (matriz [x][dias].equals("sair") || matriz [x][dias].equals("SAIR"))
 				{
 					
 					System.out.printf("\n\n");
