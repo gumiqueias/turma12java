@@ -29,12 +29,12 @@ public class exercicio1
 			if (sal < 100)
 			{
 				contador ++;
-			}			
-		}
+			}	
 			
-		tsal = (tsal + sal)/entrevistados;
-		tfilhos = (tfilhos + filhos)/entrevistados;
-		menorcem = (contador/entrevistados)*100.00;
+			tsal = (tsal + sal)/entrevistados;
+			tfilhos = (tfilhos + filhos)/entrevistados;
+			menorcem = (contador/entrevistados)*100.00;
+		}
 
 		System.out.printf ("\nA média do salário da população é de: %.2f" ,tsal);
 		System.out.printf ("\nA média de filhos da população é de: %.0f",tfilhos);
