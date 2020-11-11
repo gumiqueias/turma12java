@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class celsius {
+public class celsius 
+{
 	
 	
 	public static void main(String[] args) 

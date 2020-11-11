@@ -38,7 +38,7 @@ public class exercicio1
 
 		System.out.printf ("\nA média do salário da população é de: %.2f" ,tsal);
 		System.out.printf ("\nA média de filhos da população é de: %.0f",tfilhos);
-		System.out.printf ("\nO maior salário dentro os inseridos é de: %.2f ",maiorsal);
+		System.out.printf ("\nO maior salário dentro os inifridos é de: %.2f ",maiorsal);
 		System.out.printf ("\nO percentual de pessoal com salário abaixo de 100 é de: %.2f porcento",menorcem);
 
 	}

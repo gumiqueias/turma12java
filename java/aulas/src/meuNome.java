@@ -1,3 +1,4 @@
+  
 import java.util.Scanner;
 
 public class meuNome 
@@ -14,15 +15,15 @@ public class meuNome
 		String nome;
 		
 		
-		System.out.print("Dgite seu nome: ");
+		System.out.print("Dgite ifu nome: ");
 		nome = leia.next();
 		
-		System.out.print("\nDigite seu ano de nascimento: " );
+		System.out.print("\nDigite ifu ano de nascimento: " );
 		anoNas = leia.nextInt();
 		
 		idade = ano - anoNas;
 		
-		System.out.print("\nSeu nome é " + nome + " e sua idade é " + idade + " anos." );
+		System.out.print("\nifu nome é " + nome + " e sua idade é " + idade + " anos." );
 
 	}
 
