@@ -8,11 +8,11 @@ public class desafioBanco {
 		
 		String tipoConta;
 		String nc = "CE-1";
-		double saldo = 0.0, valorMov = 0.0;
+		double saldo = 0.0;
 		double limite = 400.0;
-		final int mov = 2;
-		String cpf = "478.475.228-33";
-		double movimentacao [] = new double [10];
+		final int mov = 10;
+		String cpf = "000.000.000-00";
+		double movimentacao [] = new double [mov];
 		int x;
 		char tipo, liberaLimite;
 		
@@ -21,27 +21,37 @@ public class desafioBanco {
 				
 		if (tipoConta.equals("CE") || tipoConta.equals("ce") )
 		{	
-			System.out.println("------------------------------------------------");
+			System.out.println("------------------------------------");
 			System.out.println("NUMERO CONTA: " + nc );
-			System.out.println("\nSALDO: R$ " + saldo);
-			System.out.println("\nVALOR LIMITE: R$ " + limite);
+			System.out.printf("SALDO: R$ %.2f",saldo);
+			System.out.printf("\nVALOR LIMITE: R$ %.2f ", limite);
 			System.out.println("\nCPF: " + cpf);
-			System.out.println("------------------------------------------------\n");
+			System.out.println("------------------------------------\n");
 			
-		}
 		
 		for (x=0; x<mov; x++)
 		{
-			System.out.print("\n\nINSIRA A "+(x+1)+"º MOVIMENTAÇÃO \n");
+			System.out.print("\nINSIRA A "+(x+1)+"º MOVIMENTAÇÃO \n");
 			System.out.print("\nCREDITO (C) OU DÉBITO (D) ? ");
 			tipo = leia.next().charAt(0);
-			
 			
 			if (tipo == 'C' || tipo == 'c')
 			{
 				System.out.print("\nINSIRA O VALOR DA TRANSAÇÃO: R$ ");
 				movimentacao [x] = leia.nextDouble();
-				saldo = saldo + movimentacao[x];
+												
+				if (limite < 400.0)
+				{
+					
+					limite = limite + movimentacao[x];
+					
+				}
+				
+				else 
+				{
+					saldo = saldo + movimentacao[x];
+				}
+				
 			}
 			
 			if (tipo == 'D' || tipo == 'd')
@@ -57,14 +67,19 @@ public class desafioBanco {
 					
 					if (liberaLimite == 'S' || liberaLimite == 's')
 					{
-						limite = limite + saldo;
-						
-						if (limite <0)
-						{
-							limite = 0;
-						}
-						
-						System.out.printf("\n\nRESTANTE LIMITE: R$ %.2f\n",limite);
+							limite = saldo + limite;
+							
+							if (limite <0)
+							{
+								limite = 0;
+							}
+							
+							System.out.printf("\n\nRESTANTE LIMITE: R$ %.2f\n",limite);						
+					}
+					
+					else if ((liberaLimite == 'N' || liberaLimite == 'N'))
+					{
+						break;
 					}
 				}
 			}
@@ -75,9 +90,14 @@ public class desafioBanco {
 			{				
 				System.out.printf("\nR$ %.2f", movimentacao[x]);
 			}
+				if (saldo <0)
+				{
+					saldo = 0.0;
+				}
 						
-				System.out.printf("\n\nSALDO RESTANTE NA CONTA - R$ "+saldo);
-		
+				System.out.printf("\n\nRESTANTE SALDO: R$ %.2f",saldo);
+				System.out.printf("\n\nRESTANTE LIMITE: R$ %.2f\n",limite);
+		}
 	}
 
 }
