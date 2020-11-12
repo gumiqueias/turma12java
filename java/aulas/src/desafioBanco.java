@@ -7,14 +7,17 @@ public class desafioBanco {
 		Scanner leia = new Scanner(System.in);
 		
 		String tipoConta;
-		String nc = "CE-1";
-		double saldo = 0.0;
-		double limite = 400.0;
-		final int mov = 10;
-		String cpf = "000.000.000-00";
-		double movimentacao [] = new double [mov];
-		int x;
-		char tipo, liberaLimite;
+		String nc = "CE-1"; // numero conta
+		double saldo = 0.0; // saldo
+		double limite = 400.0; 
+		final int mov = 10; // limite da movimentação
+		String cpf = "000.000.000-00"; // cpf
+		double movimentacao [] = new double [mov]; // vetor que guarda as movimentacoes
+		int x; // contador vetor
+		char tipo, liberaLimite; // tipo que usuario insere e o sistema lê
+		int dataAniversario;
+		int aniversario = 15;
+		double saldoAt;
 		
 		System.out.println("Insira o tipo de conta CP/CC/CE/CB:");		
 		tipoConta = leia.nextLine();
@@ -98,6 +101,66 @@ public class desafioBanco {
 				System.out.printf("\n\nRESTANTE SALDO: R$ %.2f",saldo);
 				System.out.printf("\n\nRESTANTE LIMITE: R$ %.2f\n",limite);
 		}
+		
+		if (tipoConta.equals("CP") || tipoConta.equals("cp") )
+		{	
+			System.out.println("------------------------------------");
+			System.out.println("NUMERO CONTA: " + nc );
+			System.out.printf("SALDO: R$ %.2f",saldo);
+			System.out.println("\nCPF: " + cpf);
+			System.out.println("\nANIVERSÁRIO DA CONTA DIA: "+aniversario);
+			System.out.println("------------------------------------\n");
+			
+			System.out.print("\nQUAL A DATA DE HOJE?: ");
+			dataAniversario = leia.nextInt();
+			
+		for (x=0; x<mov; x++)
+		{
+			System.out.print("\nINSIRA A "+(x+1)+"º MOVIMENTAÇÃO \n");
+			System.out.print("\nCREDITO (C) OU DÉBITO (D) ? ");
+			tipo = leia.next().charAt(0);
+			
+			if (tipo == 'C' || tipo == 'c')
+			{
+				System.out.print("\nINSIRA O VALOR DA TRANSAÇÃO: R$ ");
+				movimentacao [x] = leia.nextDouble();
+				saldo = saldo + movimentacao[x];							
+				
+			}
+			
+			if (tipo == 'D' || tipo == 'd')
+			{
+				System.out.print("\nINSIRA O VALOR DA TRANSAÇÃO: R$ ");
+				movimentacao [x] = leia.nextDouble();
+				saldo = saldo - movimentacao[x];
+			}
+			
+		}
+		
+		if (dataAniversario == aniversario)
+		{			
+			saldoAt = saldo * 0.05;	
+			saldo = saldoAt + saldo;
+			
+			for (x=0; x<mov; x++) 
+			{				
+				System.out.printf("\nR$ %.2f", movimentacao[x]);
+			}
+			
+			System.out.println("\nPARABÉNS !!1");
+			System.out.printf("\n\nRESTANTE SALDO: R$ %.2f",saldo);
+		}
+		else 
+		{
+			for (x=0; x<mov; x++) 
+			{				
+				System.out.printf("\nR$ %.2f", movimentacao[x]);
+			}
+			
+			System.out.printf("\n\nRESTANTE SALDO: R$ %.2f",saldo);
+		}
+	
 	}
+}
 
 }
