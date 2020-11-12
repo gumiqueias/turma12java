@@ -236,27 +236,33 @@ public class ecommerce {
 					{
 						break;
 					}
-				}				
+				}
+				
+				else {
+					System.out.println("\nCÓDIGO DE PRODUTO INCORRETO\n");
+					System.out.println("Por favor, digite o código do produto que deseja: ");
+				}
 			}
 			
-				System.out.println("\nCarrinho de compras:\n");
+				System.out.println("\n--------------CARRINHO DE COMPRAS---------------:\n");
 				System.out.println("PRODUTOS:\t"+"VALOR:\n");
 				
 				for (x = 0; x < minimo; x++ )
 				{
 					valorTotal = valorTotal + valorCompras[x];
 					
-					if ((compras[x] != null) && (valorCompras[x] > 0)) 
+					if ((compras[x] != null) || (valorCompras[x] > 0.0)) 
 					{
 										
 					System.out.println((x + 1)+" - "+compras[x]+"\t"+"R$ "+ valorCompras[x]+"\n");
-					System.out.println("------------------------------------------------\n");
+					System.out.println("------------------------------------------------");
 					
 					}
 				}
 				
 				imp = (valorTotal*0.09);
-		        System.out.println("Valor total do carrinho: R$"+ valorTotal + "\n");
+		        System.out.println("\nValor total do carrinho: R$"+ valorTotal + "\n");
+		        
 		        System.out.println("\n\n--------------FORMA DE PAGAMENNTO---------------\n\n");
 		        
 		        System.out.println("\nInsira 'A' dinheiro ou cheque ou 'C' para cartão de crédito: ");
@@ -273,13 +279,13 @@ public class ecommerce {
 		        	 System.out.println("\nEm 1, 2 ou 3 vezes: "); 
 			          parc = ler.nextInt();
 			            
-			          if (parc == 1)
-			          {			        	  
+			        if (parc == 1)
+			        {			        	  
 			        	  valorAtualizado = valorTotal * 0.15;
 			        	  valorTotal = valorTotal - valorAtualizado;		            
-			          }
+			        }
 			          		       
-		            if (parc == 2)
+			        else if (parc == 2)
 		            {	
 		                vezes = 1;   
 		            }
@@ -291,7 +297,21 @@ public class ecommerce {
 		                valorAtualizado = (valorTotal*0.10);
 		                valorTotal = valorTotal + valorAtualizado;
 		            }
+			        
+		            else 
+		            {
+		            	 System.out.println("\nSELEÇÃO INCORRETA\n");
+		            	 System.out.println("\nEm 1, 2 ou 3 vezes: "); 
+				         parc = ler.nextInt();
+		            }
 		    
+		        }
+		        
+		        else 
+		        {
+		        	System.out.println("\nOPÇÃO INVÁLIDA, DIGITE NOVAMENTE\n");
+		        	System.out.println("\nInsira 'A' dinheiro ou cheque ou 'C' para cartão de crédito: ");
+			        pag = ler.next();		        	
 		        }
 		        
 		        System.out.println("\nDeseja a impressão da nota fiscal - S/N ?");
@@ -300,13 +320,19 @@ public class ecommerce {
 		       
 		        if (notaFiscal == 'S' || notaFiscal == 's')
 				{
-					System.out.println("\n---------NOTA FISCAL-----------\n");
+					System.out.println("\n\n\n\n\n---------NOTA FISCAL-----------\n");
 					System.out.println("\n---------LOJAS LUIS VINTÃO-----------\n");
 					
 					for(x = 0; x < minimo; x++ )
 					{
-					System.out.println("------------------------------------------------\n\n");
-					System.out.printf((x + 1) +" - "+compras[x]+"\t"+"R$ "+ valorCompras[x]+"\n");				
+						if ((compras[x] != null) || (valorCompras[x] > 0.0)) 
+						{							
+							System.out.println("------------------------------------------------\n\n");
+							System.out.printf((x + 1) +" - "+compras[x]+"\t"+"R$ "+ valorCompras[x]+"\n");
+						
+						}
+						
+									
 					}
 					
 					System.out.printf("\n\n---------IMPOSTOS A SEREM PAGOS R$ %.2f-----------",imp,"\n\n");			
