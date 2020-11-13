@@ -364,7 +364,9 @@ public class ecommerce {
 				
 				if (novoUser == 'S' || novoUser== 's') {
 					user = true;
-				} else {
+				} 
+				else 
+				{
 					user = false;	
 				}
 		}
