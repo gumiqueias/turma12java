@@ -26,7 +26,7 @@ public class ecommerce {
 		//CARACTER COM INTERACAO DO USUARIO
 		String compras[] = new String [minimo];
 		char  notaFiscal,  confirmacao, novoUser;
-		String  pag;
+		char  pag;
 		boolean user = true;
 
 		// CODIGO DOS PRODUTOS
@@ -261,19 +261,19 @@ public class ecommerce {
 				}
 				
 				imp = (valorTotal*0.09);
-		        System.out.println("\nValor total do carrinho: R$"+ valorTotal + "\n");
+		        System.out.printf("\n\nValor total do carrinho: R$ %.2f\n", valorTotal);
 		        
 		        System.out.println("\n\n--------------FORMA DE PAGAMENNTO---------------\n\n");
 		        
-		        System.out.println("\nInsira 'A' dinheiro ou cheque ou 'C' para cartão de crédito: ");
-		        pag = ler.next();
+		        System.out.println("\nInsira 'D' dinheiro ou cheque ou 'C' para cartão de crédito: ");
+		        pag = ler.next().toUpperCase().charAt(0);
 		        
-		        if (pag .equals("A")  || pag .equals("a"))
+		        if (pag =='D')
 		        {
 		            valorAtualizado = valorTotal * 0.20;
 		            valorTotal = valorTotal - valorAtualizado;
 		        }
-		        if (pag .equals("C")  || pag .equals("c"))
+		        if (pag == 'C')
 		        {
 
 		        	 System.out.println("\nEm 1, 2 ou 3 vezes: "); 
@@ -307,21 +307,14 @@ public class ecommerce {
 		    
 		        }
 		        
-		        else 
-		        {
-		        	System.out.println("\nOPÇÃO INVÁLIDA, DIGITE NOVAMENTE\n");
-		        	System.out.println("\nInsira 'A' dinheiro ou cheque ou 'C' para cartão de crédito: ");
-			        pag = ler.next();		        	
-		        }
-		        
 		        System.out.println("\nDeseja a impressão da nota fiscal - S/N ?");
-				notaFiscal = ler.next().charAt(0);
+				notaFiscal = ler.next().toUpperCase().charAt(0);
 		        
 		       
-		        if (notaFiscal == 'S' || notaFiscal == 's')
+		        if (notaFiscal == 'S')
 				{
-					System.out.println("\n\n\n\n\n---------NOTA FISCAL-----------\n");
-					System.out.println("\n---------LOJAS LUIS VINTÃO-----------\n");
+					System.out.println("\n\n\n\n\n---------------NOTA FISCAL-------------------\n");
+					System.out.println("\n--------------LOJAS LUIS VINTÃO--------------\n");
 					
 					for(x = 0; x < minimo; x++ )
 					{
@@ -335,39 +328,38 @@ public class ecommerce {
 									
 					}
 					
-					System.out.printf("\n\n---------IMPOSTOS A SEREM PAGOS R$ %.2f-----------",imp,"\n\n");			
+					System.out.printf("\n\n-------------IMPOSTOS A SEREM PAGOS R$ %.2f-------------",imp,"\n\n");			
 					
 					if (vezes == 1)
 					{ 
-						System.out.print("\n\n---------TOTAL A SER PAGO = R$ " + valorTotal + " -----------\n");
+						System.out.print("\n\n-----------TOTAL A SER PAGO = R$ " + valorTotal + " --------------\n");
 						valorTotal = (valorTotal / 2);
-						System.out.printf("\n---------PARCELADO EM 2X DE R$ %.2f -------------- " ,valorTotal);
+						System.out.printf("\n------------PARCELADO EM 2X DE R$ %.2f -------------- " ,valorTotal);
 					}
 					else if (vezes == 2)
 					{ 
 						System.out.print("\n\n---------TOTAL A SER PAGO = R$ " + valorTotal + " -----------\n");
 						valorTotal = (valorTotal / 3);
-						System.out.printf("\n---------PARCELADO EM 3X DE R$ %.2f -------------" ,valorTotal);
+						System.out.printf("\n----------PARCELADO EM 3X DE R$ %.2f -------------" ,valorTotal);
 					}
 					else
 					{
 						System.out.print("\n\n\n---------TOTAL A SER PAGO = R$ " + valorTotal + " -----------\n");
 					}
-					System.out.print("\n\n---------OBRIGADO E VOLTE SEMPRE -----------\n");
+					System.out.print("\n\n----------------OBRIGADO E VOLTE SEMPRE -----------\n");
 					
-				} else {
-					
-					System.out.print("\n\n---------OBRIGADO E VOLTE SEMPRE -----------\n\n");
-				}
+				} 
 				System.out.print("\n\nDeseja continuar com novas compras ? (S/N)\n" );
 				novoUser = ler.next().charAt(0);
 				
 				if (novoUser == 'S' || novoUser== 's') {
 					user = true;
+					valorTotal = 0.0;
 				} 
 				else 
 				{
 					user = false;	
+					System.out.print("\n\n---------OBRIGADO E VOLTE SEMPRE -----------\n");
 				}
 		}
 		
