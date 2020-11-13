@@ -59,7 +59,15 @@ public class ecommerce {
 					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
+						if (estoque[0]==0)
+						{
+							System.out.println("\n\nPRODUTO FORA DE ESTOQUE !\n\n");
+						}
+						else 
+						{
+							System.out.println("Por favor, digite o código do produto que deseja: ");	
+						}
+											
 					}
 					else
 					{
@@ -78,7 +86,14 @@ public class ecommerce {
 					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
+						if (estoque[1]==0)
+						{
+							System.out.println("\n\nPRODUTO FORA DE ESTOQUE !\n\n");
+						}
+						else 
+						{
+							System.out.println("Por favor, digite o código do produto que deseja: ");	
+						}						
 					}
 					else
 					{
@@ -97,7 +112,14 @@ public class ecommerce {
 					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
+						if (estoque[2]==0)
+						{
+							System.out.println("\n\nPRODUTO FORA DE ESTOQUE !\n\n");
+						}
+						else 
+						{
+							System.out.println("Por favor, digite o código do produto que deseja: ");	
+						}				
 					}
 					else 
 					{
@@ -116,7 +138,14 @@ public class ecommerce {
 					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
+						if (estoque[3]==0)
+						{
+							System.out.println("\n\nPRODUTO FORA DE ESTOQUE !\n\n");
+						}
+						else 
+						{
+							System.out.println("Por favor, digite o código do produto que deseja: ");	
+						}						
 					}
 					else
 					{
@@ -135,7 +164,14 @@ public class ecommerce {
 					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
+						if (estoque[4]==0)
+						{
+							System.out.println("\n\nPRODUTO FORA DE ESTOQUE !\n\n");
+						}
+						else 
+						{
+							System.out.println("Por favor, digite o código do produto que deseja: ");	
+						}						
 					}
 					else
 					{
@@ -154,7 +190,14 @@ public class ecommerce {
 					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
+						if (estoque[5]==0)
+						{
+							System.out.println("\n\nPRODUTO FORA DE ESTOQUE !\n\n");
+						}
+						else 
+						{
+							System.out.println("Por favor, digite o código do produto que deseja: ");	
+						}					
 					}
 					else
 					{
@@ -173,7 +216,14 @@ public class ecommerce {
 					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
+						if (estoque[6]==0)
+						{
+							System.out.println("\n\nPRODUTO FORA DE ESTOQUE !\n\n");
+						}
+						else 
+						{
+							System.out.println("Por favor, digite o código do produto que deseja: ");	
+						}						
 					}
 					else 
 					{
@@ -192,7 +242,14 @@ public class ecommerce {
 					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
+						if (estoque[7]==0)
+						{
+							System.out.println("\n\nPRODUTO FORA DE ESTOQUE !\n\n");
+						}
+						else 
+						{
+							System.out.println("Por favor, digite o código do produto que deseja: ");	
+						}						
 					}
 					else
 					{
@@ -211,7 +268,14 @@ public class ecommerce {
 					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
+						if (estoque[8]==0)
+						{
+							System.out.println("\n\nPRODUTO FORA DE ESTOQUE !\n\n");
+						}
+						else 
+						{
+							System.out.println("Por favor, digite o código do produto que deseja: ");	
+						}						
 					}
 					else 
 					{
@@ -230,18 +294,21 @@ public class ecommerce {
 					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
+						if (estoque[9]==0)
+						{
+							System.out.println("\n\nPRODUTO FORA DE ESTOQUE !\n\n");
+						}
+						else 
+						{
+							System.out.println("Por favor, digite o código do produto que deseja: ");	
+						}						
 					}
 					else
 					{
 						break;
 					}
 				}
-				
-				else {
-					System.out.println("\nCÓDIGO DE PRODUTO INCORRETO\n");
-					System.out.println("Por favor, digite o código do produto que deseja: ");
-				}
+								
 			}
 			
 				System.out.println("\n--------------CARRINHO DE COMPRAS---------------:\n");
