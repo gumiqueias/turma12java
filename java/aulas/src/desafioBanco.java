@@ -12,7 +12,8 @@ public class desafioBanco {
 		double limite = 500.0, saldoLimite; 
 		final int mov = 4; 
 		String cpf = "000.000.000-00"; 
-		double movimentacao [] = new double [mov]; 
+		double movimentacaoDebito [] = new double [mov]; 
+		double movimentacaoCredito [] = new double [mov]; 
 		int x; 
 		char tipo, liberaLimite; 
 		int dataAniversario;
@@ -45,26 +46,26 @@ public class desafioBanco {
 			if (tipo == 'C' || tipo == 'c')
 			{
 				System.out.print("\nINSIRA O VALOR DA TRANSAÇÃO: R$ ");
-				movimentacao [x] = leia.nextDouble();
+				movimentacaoCredito [x] = leia.nextDouble();
 															
-					saldoLimite = saldoLimite + movimentacao[x];
+					saldoLimite = saldoLimite + movimentacaoCredito[x];
 			}
 				
 			
 			if (tipo == 'D' || tipo == 'd')
 			{
 				System.out.print("\nINSIRA O VALOR DA TRANSAÇÃO: R$ ");
-				movimentacao [x] = leia.nextDouble();
+				movimentacaoDebito [x] = leia.nextDouble();
 				
 
-				if ((saldoLimite - movimentacao[x]) < 500 && ( saldoLimite - movimentacao[x]) >=0 )
+				if ((saldoLimite - movimentacaoDebito[x]) < 500 && ( saldoLimite - movimentacaoDebito[x]) >=0 )
 				{
 					System.out.print("\n\nVALOR NEGATIVO - LIBERA O USO DO LIMITE ? S/N - ");
 					liberaLimite = leia.next().charAt(0);
 					
 					if (liberaLimite == 'S' || liberaLimite == 's')
 					{
-							saldoLimite = saldoLimite - movimentacao[x];
+							saldoLimite = saldoLimite - movimentacaoDebito[x];
 							
 							System.out.printf("\n\nSALDO + LIMITE = R$ %.2f\n",saldoLimite);						
 					}
@@ -75,7 +76,7 @@ public class desafioBanco {
 					}
 				}
 				
-				else if ((saldoLimite - movimentacao[x])  <0 )
+				else if ((saldoLimite - movimentacaoDebito[x])  <0 )
 					
 				{
 					System.out.print("\nSALDO INSUFICIENTE\n");
@@ -84,18 +85,25 @@ public class desafioBanco {
 				
 				else 
 				{
-					saldoLimite = saldoLimite - movimentacao[x];
+					saldoLimite = saldoLimite - movimentacaoDebito[x];
 				}
 				
 			}
 		}
-			System.out.println("\nTRANSAÇÕES");	
+			System.out.println("\nTRANSAÇÕES DÉBITO");	
 			
 			for (x=0; x<mov; x++) 
 			{				
-				System.out.printf("\nR$ %.2f", movimentacao[x]);
+				System.out.printf("\n- R$ %.2f", movimentacaoDebito[x]);
 			}
-				
+			
+			System.out.println("\n\nTRANSAÇÕES CRÉDITO");	
+			
+			for (x=0; x<mov; x++) 
+			{				
+				System.out.printf("\nR$ %.2f", movimentacaoCredito[x]);
+			}
+			
 				if (saldoLimite > 500)
 				{
 					saldo = saldoLimite-500;
@@ -112,7 +120,6 @@ public class desafioBanco {
 				System.out.printf("\n\nRESTANTE LIMITE: R$ %.2f\n",limite);
 				System.out.printf("\n\nRESTANTE SALDO + LIMITE: R$ %.2f\n",saldoLimite);
 		}
-		
 		if (tipoConta.equals("CP") || tipoConta.equals("cp") )
 		{	
 			System.out.println("------------------------------------");
@@ -134,23 +141,23 @@ public class desafioBanco {
 			if (tipo == 'C' || tipo == 'c')
 			{
 				System.out.print("\nINSIRA O VALOR DA TRANSAÇÃO: R$ ");
-				movimentacao [x] = leia.nextDouble();
-				saldo = saldo + movimentacao[x];							
+				movimentacaoCredito [x] = leia.nextDouble();
+				saldo = saldo + movimentacaoCredito[x];							
 				
 			}
 			
 			if (tipo == 'D' || tipo == 'd')				
 			{
 				System.out.print("\nINSIRA O VALOR DA TRANSAÇÃO: R$ ");
-				movimentacao [x] = leia.nextDouble();
+				movimentacaoDebito [x] = leia.nextDouble();
 				
-				if (saldo == 0 || saldo < movimentacao[x])  
+				if (saldo == 0 || saldo < movimentacaoDebito[x])  
 				{
 					System.out.print("\nSALDO INSUFICIENTE");
 					
 				} else 
 				{
-				saldo = saldo - movimentacao[x];
+				saldo = saldo - movimentacaoDebito[x];
 				}				
 				}
 			
@@ -161,9 +168,18 @@ public class desafioBanco {
 			saldoAt = saldo * 0.05;	
 			saldo = saldoAt + saldo;
 			
+			System.out.println("\nTRANSAÇÕES DÉBITO");	
+			
 			for (x=0; x<mov; x++) 
 			{				
-				System.out.printf("\nR$ %.2f", movimentacao[x]);
+				System.out.printf("\n- R$ %.2f", movimentacaoDebito[x]);
+			}
+			
+			System.out.println("\n\nTRANSAÇÕES CRÉDITO");	
+			
+			for (x=0; x<mov; x++) 
+			{				
+				System.out.printf("\nR$ %.2f", movimentacaoCredito[x]);
 			}
 			
 			System.out.println("\nPARABÉNS !!");
@@ -171,9 +187,18 @@ public class desafioBanco {
 		}
 		else 
 		{
+			System.out.println("\nTRANSAÇÕES DÉBITO");	
+			
 			for (x=0; x<mov; x++) 
 			{				
-				System.out.printf("\nR$ %.2f", movimentacao[x]);
+				System.out.printf("\n- R$ %.2f", movimentacaoDebito[x]);
+			}
+			
+			System.out.println("\n\nTRANSAÇÕES CRÉDITO");	
+			
+			for (x=0; x<mov; x++) 
+			{				
+				System.out.printf("\nR$ %.2f", movimentacaoCredito[x]);
 			}
 			
 			System.out.printf("\n\nRESTANTE SALDO: R$ %.2f",saldo);
@@ -197,22 +222,22 @@ public class desafioBanco {
 				if (tipo == 'C' )
 				{
 					System.out.print("\nINSIRA O VALOR DA TRANSAÇÃO: R$ ");
-					movimentacao[x] = leia.nextDouble();
-					saldo = saldo + movimentacao[x];
+					movimentacaoCredito[x] = leia.nextDouble();
+					saldo = saldo + movimentacaoCredito[x];
 				} 
 				
 				else if (tipo == 'D') 
 				{
 					System.out.print("\nINSIRA O VALOR DA TRANSAÇÃO: R$ ");
-					movimentacao[x] = leia.nextDouble();
+					movimentacaoDebito[x] = leia.nextDouble();
 					
-					if (saldo == 0 || saldo < movimentacao[x]) 
+					if (saldo == 0 || saldo < movimentacaoDebito[x]) 
 					{
 						System.out.print("\nSALDO INSUFICIENTE");
 						
 					} else {
 						
-						saldo = saldo - movimentacao[x];
+						saldo = saldo - movimentacaoDebito[x];
 					}
 				}
 			}
@@ -226,11 +251,18 @@ public class desafioBanco {
 				System.out.println("NÚMERO DO NOVO TALÃO DE CHEQUE: 00-" + talaoCheque);				
 			} 
 									
-			System.out.println("\nTRANSAÇÕES");
+			System.out.println("\nTRANSAÇÕES DÉBITO");	
 			
-			for (x = 0; x < mov; x++) 
-			{
-				System.out.printf("\nR$ %.2f", movimentacao[x]);
+			for (x=0; x<mov; x++) 
+			{				
+				System.out.printf("\n- R$ %.2f", movimentacaoDebito[x]);
+			}
+			
+			System.out.println("\n\nTRANSAÇÕES CRÉDITO");	
+			
+			for (x=0; x<mov; x++) 
+			{				
+				System.out.printf("\nR$ %.2f", movimentacaoCredito[x]);
 			}
 			
 			System.out.printf("\n\nSALDO RESTANTE NA CONTA: R$ " + saldo);
