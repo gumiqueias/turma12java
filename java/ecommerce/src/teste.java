@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ecommerce {
+public class teste {
 
 	public static void main(String[] args) {
 		
@@ -19,7 +19,7 @@ public class ecommerce {
 		double valorTotal = 0.0;
 		double imp = 0.0;
 		double valorAtualizado = 0.0;
-		int quantidade[] = new int[minimo];
+		int quantidade = 0;
 		
 		//PRODUTOS DA NOSSA LOJA
 		String produtos[] = {"Calça","Short","Camisa","Vestido","Camiseta","Babylook","Saia","Bermuda","Touca","Cinto"};
@@ -51,9 +51,30 @@ public class ecommerce {
 				
 				if (codigo[x] == 1)
 				{
-					System.out.println("Quantas unidades do produto ?");
-					quantidade[0] = ler.nextInt();
-					estoque[0] = (estoque[0] - quantidade[0]);
+										
+					if (estoque [0] != 0)
+					{
+						System.out.println("Quantas unidades do produto ?");
+						quantidade = ler.nextInt();
+						
+						if ((estoque[0] - quantidade)<0)
+						{
+							System.out.println("\nQuantidade indisponível no estoque !!\n");
+							System.out.println("Quantas unidades do produto ?");
+						}
+						else 
+						{
+							estoque[0] = (estoque[0] - quantidade);
+						}
+					}
+					
+					if (estoque [0] == 0)
+					{
+						System.out.println("\nProduto fora de estoque.\n");
+						
+
+					}
+					
 					compras[x] = produtos[0];
 					valorCompras[x] = valor[0];
 					System.out.println("O produto "+"'"+produtos[0]+"'"+ " foi adicionado ao carrinho.\n");
@@ -73,15 +94,28 @@ public class ecommerce {
 								
 				if (codigo[x] == 2)
 				{
+					if (estoque [1] == 0)
+					{
+						System.out.println("\nProduto fora de estoque.");
+					}
+					
 					System.out.println("Quantas unidades do produto ?");
-					quantidade[1] = ler.nextInt();
-					estoque[1] = (estoque[1] - quantidade[1]);
+					quantidade = ler.nextInt();
+					
+					if ((estoque[1] - quantidade)<=0)
+					{
+						System.out.println("\nQuantidade indisponível no estoque !!\n");
+					}
+					else 
+					{
+						estoque[1] = (estoque[1] - quantidade);
+					}
+					estoque[1] = (estoque[1] - quantidade);
 					compras[x] = produtos[1];
 					valorCompras[x] = valor[1];
 					System.out.println("O produto "+"'"+produtos[1]+"'"+ " foi adicionado ao carrinho.\n");
 					System.out.println("Deseja adicionar outros produtos ao carrinho ?(S/N)");
 					confirmacao = ler.next().charAt(0);
-					
 					if (confirmacao == 'S' || confirmacao == 's')
 					{
 						System.out.println("Por favor, digite o código do produto que deseja: ");						
@@ -93,178 +127,6 @@ public class ecommerce {
 				}
 				
 								
-				if (codigo[x] == 3)
-				{
-					System.out.println("Quantas unidades do produto ?");
-					quantidade[2] = ler.nextInt();
-					estoque[2] = (estoque[2] - quantidade[2]);
-					compras[x] = produtos[2];
-					valorCompras[x] = valor[2];
-					System.out.println("O produto "+"'"+produtos[2]+"'"+ " foi adicionado ao carrinho.\n");
-					System.out.println("Deseja adicionar outros produtos ao carrinho ?(S/N)");
-					confirmacao = ler.next().charAt(0);
-					
-					if (confirmacao == 'S' || confirmacao == 's')
-					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
-					}
-					else
-					{
-						break;
-					}
-				}
-				
-								
-				if (codigo[x] == 4)
-				{
-					System.out.println("Quantas unidades do produto ?");
-					quantidade[3] = ler.nextInt();
-					estoque[3] = (estoque[3] - quantidade[3]);
-					compras[x] = produtos[3];
-					valorCompras[x] = valor[3];
-					System.out.println("O produto "+"'"+produtos[3]+"'"+ " foi adicionado ao carrinho.\n");
-					System.out.println("Deseja adicionar outros produtos ao carrinho ?(S/N)");
-					confirmacao = ler.next().charAt(0);
-					
-					if (confirmacao == 'S' || confirmacao == 's')
-					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
-					}
-					else
-					{
-						break;
-					}
-				}
-												
-				if (codigo[x] == 5)
-				{
-					System.out.println("Quantas unidades do produto ?");
-					quantidade[4] = ler.nextInt();
-					estoque[4] = (estoque[4] - quantidade[4]);
-					compras[x] = produtos[4];
-					valorCompras[x] = valor[4];
-					System.out.println("O produto "+"'"+produtos[4]+"'"+ " foi adicionado ao carrinho.\n");
-					System.out.println("Deseja adicionar outros produtos ao carrinho ?(S/N)");
-					confirmacao = ler.next().charAt(0);
-					if (confirmacao == 'S' || confirmacao == 's')
-					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
-					}
-					else
-					{
-						break;
-					}
-				}
-											
-				if (codigo[x] == 6)
-				{
-					System.out.println("Quantas unidades do produto ?");
-					quantidade[5] = ler.nextInt();
-					estoque[5] = (estoque[5] - quantidade[5]);
-					compras[x] = produtos[5];
-					valorCompras[x] = valor[5];
-					System.out.println("O produto "+"'"+produtos[5]+"'"+ " foi adicionado ao carrinho.\n");
-					System.out.println("Deseja adicionar outros produtos ao carrinho ?(S/N)");
-					confirmacao = ler.next().charAt(0);
-					
-					if (confirmacao == 'S' || confirmacao == 's')
-					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
-					}
-					else
-					{
-						break;
-					}
-				}
-												
-				if (codigo[x] == 7)
-				{
-					System.out.println("Quantas unidades do produto ?");
-					quantidade[6] = ler.nextInt();
-					estoque[6] = (estoque[6] - quantidade[6]);
-					compras[x] = produtos[6];
-					valorCompras[x] = valor[6];
-					System.out.println("O produto "+"'"+produtos[6]+"'"+ " foi adicionado ao carrinho.\n");
-					System.out.println("Deseja adicionar outros produtos ao carrinho ?(S/N)");
-					confirmacao = ler.next().charAt(0);
-					
-					if (confirmacao == 'S' || confirmacao == 's')
-					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
-					}
-					else
-					{
-						break;
-					}
-				}
-												
-				if (codigo[x] == 8)
-				{
-					System.out.println("Quantas unidades do produto ?");
-					quantidade[7] = ler.nextInt();
-					estoque[7] = (estoque[7] - quantidade[7]);
-					compras[x] = produtos[7];
-					valorCompras[x] = valor[7];
-					System.out.println("O produto "+"'"+produtos[7]+"'"+ " foi adicionado ao carrinho.\n");
-					System.out.println("Deseja adicionar outros produtos ao carrinho ?(S/N)");
-					confirmacao = ler.next().charAt(0);
-					
-					if (confirmacao == 'S' || confirmacao == 's')
-					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
-					}
-					else
-					{
-						break;
-					}
-				}
-												
-				if (codigo[x] == 9)
-				{
-					System.out.println("Quantas unidades do produto ?");
-					quantidade[8] = ler.nextInt();
-					estoque[8] = (estoque[8] - quantidade[8]);
-					compras[x] = produtos[8];
-					valorCompras[x] = valor[8];
-					System.out.println("O produto "+"'"+produtos[8]+"'"+ " foi adicionado ao carrinho.\n");
-					System.out.println("Deseja adicionar outros produtos ao carrinho ?(S/N)");
-					confirmacao = ler.next().charAt(0);
-					
-					if (confirmacao == 'S' || confirmacao == 's')
-					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
-					}
-					else
-					{
-						break;
-					}
-				}
-				
-				if (codigo[x] == 10)
-				{
-					System.out.println("Quantas unidades do produto ?");
-					quantidade[9] = ler.nextInt();
-					estoque[9] = (estoque[9] - quantidade[9]);
-					compras[x] = produtos[9];
-					valorCompras[x] = valor[9];
-					System.out.println("O produto "+"'"+produtos[9]+"'"+ " foi adicionado ao carrinho.\n");
-					System.out.println("Deseja adicionar outros produtos ao carrinho ?(S/N)");
-					confirmacao = ler.next().charAt(0);
-					
-					if (confirmacao == 'S' || confirmacao == 's')
-					{
-						System.out.println("Por favor, digite o código do produto que deseja: ");						
-					}
-					else
-					{
-						break;
-					}
-				}
-				
-				if(estoque[x] == 0) {
-					System.out.println("\nProduto fora de estoque.");
-				}
-																			
 			}
 			
 				System.out.println("\n--------------CARRINHO DE COMPRAS---------------:\n");

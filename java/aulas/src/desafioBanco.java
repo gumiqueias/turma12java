@@ -10,7 +10,7 @@ public class desafioBanco {
 		String nc = "CE-1"; 
 		double saldo = 0.0; 
 		double limite = 500.0, saldoLimite; 
-		final int mov = 4; 
+		final int mov = 2; 
 		String cpf = "000.000.000-00"; 
 		double movimentacaoDebito [] = new double [mov]; 
 		double movimentacaoCredito [] = new double [mov]; 
@@ -70,9 +70,11 @@ public class desafioBanco {
 							System.out.printf("\n\nSALDO + LIMITE = R$ %.2f\n",saldoLimite);						
 					}
 					
-					else if ((liberaLimite == 'N' || liberaLimite == 'N'))
+					else if ((liberaLimite == 'N' || liberaLimite == 'n'))
 					{
-						break;
+						System.out.print("\n\nSALDO INSUFICIENTE\n");
+						System.out.print("\nREPITA A TRANSAÇÃO\n\n");
+						x--;
 					}
 				}
 				
@@ -90,19 +92,28 @@ public class desafioBanco {
 				
 			}
 		}
+			System.out.println("\n________________________________________________\n");
 			System.out.println("\nTRANSAÇÕES DÉBITO");	
 			
 			for (x=0; x<mov; x++) 
-			{				
-				System.out.printf("\n- R$ %.2f", movimentacaoDebito[x]);
+			{	
+				if (movimentacaoDebito [x] != 0)
+				{
+					System.out.printf("\nR$ %.2f", movimentacaoDebito[x]);
+				}
 			}
 			
 			System.out.println("\n\nTRANSAÇÕES CRÉDITO");	
 			
 			for (x=0; x<mov; x++) 
-			{				
-				System.out.printf("\nR$ %.2f", movimentacaoCredito[x]);
+			{	
+				if (movimentacaoCredito [x] != 0)
+				{
+					System.out.printf("\nR$ %.2f", movimentacaoCredito[x]);
+				}
 			}
+			
+			System.out.println("\n________________________________________________\n");
 			
 				if (saldoLimite > 500)
 				{
@@ -116,10 +127,11 @@ public class desafioBanco {
 					limite = saldoLimite;
 				}
 					
-				System.out.printf("\n\nRESTANTE SALDO: R$ %.2f\n",saldo);
-				System.out.printf("\n\nRESTANTE LIMITE: R$ %.2f\n",limite);
-				System.out.printf("\n\nRESTANTE SALDO + LIMITE: R$ %.2f\n",saldoLimite);
+			System.out.printf("\n\nRESTANTE SALDO: R$ %.2f\n",saldo);
+			System.out.printf("\n\nRESTANTE LIMITE: R$ %.2f\n",limite);
+			System.out.printf("\n\nRESTANTE SALDO + LIMITE: R$ %.2f\n",saldoLimite);
 		}
+		
 		if (tipoConta.equals("CP") || tipoConta.equals("cp") )
 		{	
 			System.out.println("------------------------------------");
