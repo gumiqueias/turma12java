@@ -2,16 +2,17 @@ import java.util.Scanner;
 
 public class desafioBanco {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
 		Scanner leia = new Scanner(System.in);
 		
 		String tipoConta;
-		String nc = "CE-1"; 
+		String nc = "CE-1";
 		double saldo = 0.0; 
 		double limite = 500.0, saldoLimite; 
-		final int mov = 2; 
-		String cpf = "000.000.000-00"; 
+		final int mov = 5; 
+		String cpf = "123.456.789-10"; 
 		double movimentacaoDebito [] = new double [mov]; 
 		double movimentacaoCredito [] = new double [mov]; 
 		int x; 
@@ -21,6 +22,7 @@ public class desafioBanco {
 		double saldoAt;
 		int  talaoCheque = 1;
 		char  novoTalao;
+		
 		
 		System.out.println("Insira o tipo de conta CP/CC/CE/CB:");		
 		tipoConta = leia.nextLine();
@@ -280,6 +282,7 @@ public class desafioBanco {
 			System.out.printf("\n\nSALDO RESTANTE NA CONTA: R$ " + saldo);
 			
 		}
+	
 	}
 
 }

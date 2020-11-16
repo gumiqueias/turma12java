@@ -10,24 +10,41 @@ public class contaEspecial
 		
 		Scanner leia = new Scanner(System.in);
 		
-		String tipoConta;
+		int tipoConta;
 		String nc = "CE-1"; 
 		double saldo = 0.0; 
 		double limite = 500.0, saldoLimite; 
 		final int mov = 4; 
-		String cpf = "000.000.000-00"; 
+		int cpf;
+		int codCadastro = 0;
+		int cadastro [] = new int [10];
 		double movimentacaoDebito [] = new double [mov]; 
 		double movimentacaoCredito [] = new double [mov]; 
 		int x; 
 		char tipo, liberaLimite; 
 
-		
-		System.out.println("Insira o tipo de conta CP/CC/CE/CB:");		
-		tipoConta = leia.nextLine();
+		System.out.println("Insira CPF ou CNPJ:");
+		cpf = leia.nextInt();
+						
+			if (cpf != cadastro[codCadastro])
+			{
+				cadastro [codCadastro] = cpf;
+				codCadastro++;
+				System.out.println("NOVO CADASTRO REALIZADO ! BEM VINDO !\n");
+			}
+			
+			if (cpf == cadastro[codCadastro])
+			{
+				System.out.println("BEM VINDO !\n");
+			}			
 		
 		System.out.println("\nATENÇÃO, DIGITE '0' A QUALQUER MOMENTO PARA SAIR DO PROGRAMA !\n");
-				
-		if (tipoConta.equals("CE") || tipoConta.equals("ce") )
+		
+		System.out.println("Insira o tipo de conta: \n1 - CONTA POUPANÇA\n2 - CONTA CORRENTE\n3 - CONTA ESPECIAL\n4 - CONTA EMPRESARIAL");		
+		tipoConta = leia.nextInt();
+
+						
+		if (tipoConta == 3)
 		{	
 			saldoLimite = saldo + limite;
 			System.out.println("------------------------------------");
@@ -35,7 +52,7 @@ public class contaEspecial
 			System.out.printf("SALDO: R$ %.2f",saldo);
 			System.out.printf("\nVALOR LIMITE: R$ %.2f ", limite);
 			System.out.printf("\nSALDO + LIMITE: R$ %.2f ", saldoLimite);
-			System.out.println("\nCPF: " + cpf);
+			System.out.println("\nCPF: " + cpf );
 			System.out.println("------------------------------------\n");
 			
 		
