@@ -5,4 +5,11 @@ public class aves {
 	public String cor;
 	public String bico;
 	public String tipoAve;
+	
+	public aves (String cor, String bico, String tipoAve)
+	{
+		this.cor = cor;
+		this.bico = bico;
+		this.tipoAve = tipoAve;
+	}
 }

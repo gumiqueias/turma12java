@@ -10,34 +10,51 @@ public class contaEspecial
 		
 		Scanner leia = new Scanner(System.in);
 		
-		int tipoConta;
-		String nc = "CE-1"; 
-		double saldo = 0.0; 
+		int tipoConta; 		
+		double saldo = 0;
 		double limite = 500.0, saldoLimite; 
 		final int mov = 4; 
 		int cpf;
 		int codCadastro = 0;
 		int cadastro [] = new int [10];
+		double saldoVetor [] = new double [10];
 		double movimentacaoDebito [] = new double [mov]; 
 		double movimentacaoCredito [] = new double [mov]; 
-		int x; 
-		char tipo, liberaLimite; 
+		int x, y = 1, localizaSaldo = -1;
+		char tipo, liberaLimite, continua;
+		boolean user = true;
 
+		while (user == true )
+		{
 		System.out.println("Insira CPF ou CNPJ:");
 		cpf = leia.nextInt();
-						
+		
+		for (x = 0; x<10; x++)
+		{
+			if (cpf == cadastro[x])
+			{
+				System.out.println("\nBEM VINDO !\n");
+				saldo = saldoVetor[x];
+				localizaSaldo  = x;
+				break;				
+			}
+				
 			if (cpf != cadastro[codCadastro])
 			{
 				cadastro [codCadastro] = cpf;
-				codCadastro++;
-				System.out.println("NOVO CADASTRO REALIZADO ! BEM VINDO !\n");
+				System.out.println("\nNOVO CADASTRO REALIZADO !\n\n BEM VINDO !\n");
+				localizaSaldo ++;
+				saldoVetor [localizaSaldo] = 0;
+				break;
 			}
-			
-			if (cpf == cadastro[codCadastro])
+			else 
 			{
-				System.out.println("BEM VINDO !\n");
-			}			
+				codCadastro ++;
+			}
+
+		}
 		
+			
 		System.out.println("\nATENÇÃO, DIGITE '0' A QUALQUER MOMENTO PARA SAIR DO PROGRAMA !\n");
 		
 		System.out.println("Insira o tipo de conta: \n1 - CONTA POUPANÇA\n2 - CONTA CORRENTE\n3 - CONTA ESPECIAL\n4 - CONTA EMPRESARIAL");		
@@ -48,7 +65,7 @@ public class contaEspecial
 		{	
 			saldoLimite = saldo + limite;
 			System.out.println("------------------------------------");
-			System.out.println("NUMERO CONTA: " + nc );
+			System.out.println("NUMERO CONTA: CE - " + y );
 			System.out.printf("SALDO: R$ %.2f",saldo);
 			System.out.printf("\nVALOR LIMITE: R$ %.2f ", limite);
 			System.out.printf("\nSALDO + LIMITE: R$ %.2f ", saldoLimite);
@@ -98,8 +115,8 @@ public class contaEspecial
 					if (liberaLimite == '0')
 					{	
 						System.out.println("\\nn________________________________________________\n");
-						System.out.println("\nTRANSAÇÃO FINALIZADA\n");
-						break;
+						System.out.println("\nTRANSAÇÃO FINALIZADA\n");						
+						user = false;
 					}
 				}
 				
@@ -154,15 +171,31 @@ public class contaEspecial
 				
 				if (saldoLimite <= 500)
 				{
-					saldo = 0;
 					limite = saldoLimite;
 				}
 					
 			System.out.printf("\n\nRESTANTE SALDO: R$ %.2f\n",saldo);
 			System.out.printf("\n\nRESTANTE LIMITE: R$ %.2f\n",limite);
 			System.out.printf("\n\nRESTANTE SALDO + LIMITE: R$ %.2f\n",saldoLimite);
+			
+			saldoVetor [x] = saldo;
+			
+			System.out.println("\nDESEJA INICIAR UMA NOVA TRANSAÇÃO S/N ?");
+			continua = leia.next().charAt(0);
+			
+			if (continua == 'S' || continua == 's')
+			{
+				user = true;
+				y++;
+				localizaSaldo = -1;
+			}
+			else 
+			{
+				user = false;
+				
+			}
 		}
-		
+	}
 	}
 
 }
