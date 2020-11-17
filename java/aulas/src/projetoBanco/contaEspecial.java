@@ -15,46 +15,45 @@ public class contaEspecial
 		double limite = 500.0, saldoLimite; 
 		final int mov = 4; 
 		int cpf;
-		int codCadastro = 0;
-		int cadastro [] = new int [10];
+		int cadastro [] = {0,0,0,0,0};
 		double saldoVetor [] = new double [10];
 		double movimentacaoDebito [] = new double [mov]; 
 		double movimentacaoCredito [] = new double [mov]; 
-		int x, y = 1, localizaSaldo = -1;
+		int x, y = 1, localizaSaldo = 0;
 		char tipo, liberaLimite, continua;
 		boolean user = true;
+		boolean serch = false;
+	
 
 		while (user == true )
 		{
+			
 		System.out.println("Insira CPF ou CNPJ:");
 		cpf = leia.nextInt();
 		
-		for (x = 0; x<10; x++)
+		for (x = 0; x<5; x++)
 		{
-			if (cpf == cadastro[x])
+			if (cadastro [x] == (cpf) )
 			{
 				System.out.println("\nBEM VINDO !\n");
 				saldo = saldoVetor[x];
-				localizaSaldo  = x;
+				serch = true;	
+				localizaSaldo = x;
 				break;				
 			}
-				
-			if (cpf != cadastro[codCadastro])
+			
+			if (cadastro[x] == 0 && cadastro [x] != cpf)
 			{
-				cadastro [codCadastro] = cpf;
-				System.out.println("\nNOVO CADASTRO REALIZADO !\n\n BEM VINDO !\n");
-				localizaSaldo ++;
-				saldoVetor [localizaSaldo] = 0;
+				cadastro [x] = cpf;
+				saldoVetor [x] = 0;
+				System.out.println("\nNOVO CADASTRO REALIZADO !\n\nBEM VINDO !\n");
+				saldo = saldoVetor[x];
+				localizaSaldo = x;
 				break;
 			}
-			else 
-			{
-				codCadastro ++;
-			}
-
 		}
+
 		
-			
 		System.out.println("\nATENÇÃO, DIGITE '0' A QUALQUER MOMENTO PARA SAIR DO PROGRAMA !\n");
 		
 		System.out.println("Insira o tipo de conta: \n1 - CONTA POUPANÇA\n2 - CONTA CORRENTE\n3 - CONTA ESPECIAL\n4 - CONTA EMPRESARIAL");		
@@ -178,7 +177,8 @@ public class contaEspecial
 			System.out.printf("\n\nRESTANTE LIMITE: R$ %.2f\n",limite);
 			System.out.printf("\n\nRESTANTE SALDO + LIMITE: R$ %.2f\n",saldoLimite);
 			
-			saldoVetor [x] = saldo;
+			saldoVetor [localizaSaldo] = saldo;
+			saldo = 0;
 			
 			System.out.println("\nDESEJA INICIAR UMA NOVA TRANSAÇÃO S/N ?");
 			continua = leia.next().charAt(0);
@@ -187,7 +187,12 @@ public class contaEspecial
 			{
 				user = true;
 				y++;
-				localizaSaldo = -1;
+				serch = false;
+				
+				for (x = 0; x<5; x++)
+				{
+					System.out.println(cadastro[x]);
+				}
 			}
 			else 
 			{
