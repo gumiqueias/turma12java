@@ -9,8 +9,8 @@ public class cadAluno {
 
 	public static void main(String[] args) {
 		
-		pessoa aluno = new pessoa();
-		pessoa aluno2 = new pessoa();		
+		//pessoa aluno = new pessoa();
+		//pessoa aluno2 = new pessoa();		
 		disciplina cursoPessoa = new disciplina();
 		disciplina cursoPessoa2 = new disciplina();
 		Scanner leia = new Scanner(System.in);
@@ -19,9 +19,9 @@ public class cadAluno {
 		
 		System.out.println("SISTEMA DE CADASTRO DE ALUNOS POR MATERIA");
 		System.out.print("Digite o nome do aluno: ");
-		aluno.nome = leia.next().toUpperCase();
+		//aluno.nome = leia.next().toUpperCase();
 		System.out.print("Digite M-Masculino, F-feminino ou O-outros: ");
-		aluno.genero = leia.next().toUpperCase().charAt(0);
+		//aluno.genero = leia.next().toUpperCase().charAt(0);
 		System.out.println("Escolha 1-JAVA ou 2-SQL");
 		escolha = leia.nextInt();
 		if (escolha==1) {
@@ -36,15 +36,15 @@ public class cadAluno {
 		}
 		
 		
-		if (aluno.genero =='F') {
-			System.out.printf("Oi %s, você é agora aluna do curso de %s", aluno.nome, cursoPessoa.nome );
+		//if (aluno.genero =='F') {
+		//	System.out.printf("Oi %s, você é agora aluna do curso de %s", aluno.nome, cursoPessoa.nome );
 			
-		} else if (aluno.genero =='M') {
-			System.out.printf("Oi %s, você é agora aluno do curso de %s", aluno.nome, cursoPessoa.nome );
-		}
-		else if (aluno.genero =='O') {
-			System.out.printf("Oi %s, você é agora alunx do curso de %s", aluno.nome, cursoPessoa.nome );
-		} else
+		//} else if (aluno.genero =='M') {
+		//	System.out.printf("Oi %s, você é agora aluno do curso de %s", aluno.nome, cursoPessoa.nome );
+		//}
+		//else if (aluno.genero =='O') {
+			//System.out.printf("Oi %s, você é agora alunx do curso de %s", aluno.nome, cursoPessoa.nome );
+		//} else
 		{
 			System.out.println("Vc não informou seu genereo, que pena!!!");
 		}
@@ -53,9 +53,9 @@ public class cadAluno {
 		
 		
 		System.out.print("Digite o nome do aluno: ");
-		aluno2.nome = leia.next().toUpperCase();
+		//aluno2.nome = leia.next().toUpperCase();
 		System.out.print("Digite M-Masculino, F-feminino ou O-outros: ");
-		aluno2.genero = leia.next().toUpperCase().charAt(0);
+		//aluno2.genero = leia.next().toUpperCase().charAt(0);
 		System.out.println("Escolha 1-JAVA ou 2-SQL");
 		escolha = leia.nextInt();
 		if (escolha==1) {
@@ -70,21 +70,21 @@ public class cadAluno {
 		}
 		
 		
-		if (aluno2.genero =='F') {
-			System.out.printf("Oi %s, você é agora aluna do curso de %s", aluno2.nome, cursoPessoa2.nome );
+		//if (aluno2.genero =='F') {
+		//	System.out.printf("Oi %s, você é agora aluna do curso de %s", aluno2.nome, cursoPessoa2.nome );
 			
-		} else if (aluno2.genero =='M') {
-			System.out.printf("Oi %s, você é agora aluno do curso de %s", aluno2.nome, cursoPessoa2.nome );
-		}
-		else if (aluno2.genero =='O') {
-			System.out.printf("Oi %s, você é agora alunx do curso de %s", aluno2.nome, cursoPessoa2.nome );
-		} else
+		//} else if (aluno2.genero =='M') {
+		//	System.out.printf("Oi %s, você é agora aluno do curso de %s", aluno2.nome, cursoPessoa2.nome );
+		//}
+		//else if (aluno2.genero =='O') {
+		//	System.out.printf("Oi %s, você é agora alunx do curso de %s", aluno2.nome, cursoPessoa2.nome );
+		//} else
 		{
 			System.out.println("Vc não informou seu genereo, que pena!!!");
 		}
 		System.out.println();
 		System.out.println("Nossos alunos:");
-		System.out.println(aluno.nome+"  -  "+aluno2.nome);
+		//System.out.println(aluno.nome+"  -  "+aluno2.nome);
 		
 
 	}

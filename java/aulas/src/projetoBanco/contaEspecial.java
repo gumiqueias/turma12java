@@ -22,7 +22,7 @@ public class contaEspecial
 		int x, y = 1, localizaSaldo = 0;
 		char tipo, liberaLimite, continua;
 		boolean user = true;
-		boolean serch = false;
+;
 	
 
 		while (user == true )
@@ -37,7 +37,6 @@ public class contaEspecial
 			{
 				System.out.println("\nBEM VINDO !\n");
 				saldo = saldoVetor[x];
-				serch = true;	
 				localizaSaldo = x;
 				break;				
 			}
@@ -46,7 +45,8 @@ public class contaEspecial
 			{
 				cadastro [x] = cpf;
 				saldoVetor [x] = 0;
-				System.out.println("\nNOVO CADASTRO REALIZADO !\n\nBEM VINDO !\n");
+				System.out.println("\nCPF NÃO ENCONTRADO, IREMOS CADASTRA-LO, UM MOMENTO !\n");
+				System.out.println("\nNOVO CADASTRO REALIZADO !\n");
 				saldo = saldoVetor[x];
 				localizaSaldo = x;
 				break;
@@ -187,7 +187,6 @@ public class contaEspecial
 			{
 				user = true;
 				y++;
-				serch = false;
 				
 				for (x = 0; x<5; x++)
 				{
