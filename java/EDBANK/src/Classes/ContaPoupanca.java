@@ -24,6 +24,16 @@ public class ContaPoupanca extends Conta
 		this.dataAniversario = dataAniversario;
 	}
 	
+	public void correcao (int data)
+	{
+		double novoSaldo = 0.0;
+		
+		if (super.getSaldo() > 0 && data == this.dataAniversario)
+		{
+			novoSaldo = (super.getSaldo()*0.005);
+			super.creditar(novoSaldo);
+		}
+	}
 	
 	
 	

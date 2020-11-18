@@ -119,7 +119,7 @@ public class contaEspecial
 					}
 				}
 				
-				else if ((saldoLimite - movimentacaoDebito[x])  <0 )
+				else if ((saldoLimite - movimentacaoDebito[x]) < 0 )
 					
 				{
 					System.out.print("\nSALDO INSUFICIENTE\n");

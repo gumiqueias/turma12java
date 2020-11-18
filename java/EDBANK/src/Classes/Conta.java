@@ -1,11 +1,14 @@
 package Classes;
 
+import java.util.Scanner;
+
 public class Conta 
 {
 	private int numero;
 	private String cpf_cnpj;
 	private double saldo;
 	
+	Scanner leia = new Scanner (System.in);
 	
 	// construtor	
 	public Conta(int numero) 
@@ -48,6 +51,12 @@ public class Conta
 	public void creditar (double credito)
 	{
 		this.saldo = this.saldo + credito;
+	}
+	
+	public void menu ()
+	{	
+
+		System.out.println("POR FAVOR, INSIRA O CODIGO DA CONTA DESEJADA:\n1 - CONTA POUPANÇA \n2 - CONTA CORRENTE \n3 - CONTA ESPECIAL \n4 - CONTA EMPRESARIAL");
 	}
 	
 }
