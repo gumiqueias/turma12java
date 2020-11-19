@@ -1,6 +1,6 @@
 package luis_vintao;
 
-public class Pagamento 
+public class Pagamento extends Cliente 
 {	
 	private double valor;
 	private double parcelas;
@@ -62,9 +62,12 @@ public class Pagamento
 	
 	public void notaFiscal1 () 
 	{
-		System.out.println("\n\n\n\n\n------------------------------NOTA FISCAL----------------------------\n");
-		System.out.println("\n--------------------------LOJAS LUIS VINTÃO--------------------------\n");
-		System.out.println("PRODUTOS:\t"+"VALOR:\t\tQUANTIDADE:\n");
+		System.out.println("\n\n\n\n\n                               NOTA FISCAL                             \n");
+		System.out.println("\n                            LOJAS LUIS VINTÃO                          \n");
+		System.out.println("\n                          CNPJ 1234538742-0001                          \n");
+		System.out.println("\n                          AV. BRASIL 937 - SP                           \n");
+		System.out.println("--------------------------------------------------------------------");
+		System.out.println("PRODUTOS: \t VALOR: \t UND: \t\t DATA:");
 		// carrinho		
 	}
 	public void notaFiscal2 ()
@@ -72,26 +75,26 @@ public class Pagamento
 		double impostos;
 		impostos = this.valorFinal*0.09;
 		
-		System.out.printf("\n---------------------IMPOSTOS A SEREM PAGOS R$ %.2f------------------",impostos,"\n\n");
+		System.out.printf("\n                     IMPOSTOS A SEREM PAGOS R$ %.2f                  ",impostos,"\n\n");
 		
 		if (this.parc == 1)
 		{ 
-			System.out.printf("\n\n----------------------TOTAL A SER PAGO = R$ %.2f -------------------\n",this.valorFinal);
+			System.out.printf("\n\n                      TOTAL A SER PAGO = R$ %.2f                    \n",this.valorFinal);
 
-			System.out.printf("\n----------------------PARCELADO EM 2X DE R$ %.2f -------------------" ,this.parcelas,"\n\n");
+			System.out.printf("\n                      PARCELADO EM 2X DE R$ %.2f                     " ,this.parcelas,"\n\n");
 		}
 		else if (parc == 2)
 		{ 
-			System.out.printf("\n\n----------------------TOTAL A SER PAGO = R$ %.2f -------------------\n",this.valorFinal);
+			System.out.printf("\n\n                      TOTAL A SER PAGO = R$ %.2f                    \n",this.valorFinal);
 			
-			System.out.printf("\n----------------------PARCELADO EM 3X DE R$ %.2f -------------------" ,this.parcelas,"\n\n");
+			System.out.printf("\n                      PARCELADO EM 3X DE R$ %.2f                     " ,this.parcelas,"\n\n");
 		}
 		else
 		{
-			System.out.printf("\n\n----------------------TOTAL A SER PAGO = R$ %.2f -------------------\n",this.valorFinal);
+			System.out.printf("\n\n                      TOTAL A SER PAGO = R$ %.2f                    \n",this.valorFinal);
 		}
 		
-		System.out.print("\n\n------------------------OBRIGADO E VOLTE SEMPRE----------------------\n");
+		System.out.print("\n\n------------------------OBRIGADO E VOLTE SEMPRE----------------------\n\n\n\n");
 	}
 	public void valorFinal(double valor) {
 		this.valorFinal += valor;

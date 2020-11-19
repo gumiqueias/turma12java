@@ -1,11 +1,13 @@
 package luis_vintao;
+import java.time.LocalDate;
 
 public class Cliente 
 {
 	//ATRIBUTOS
-	private String nome;
+	private LocalDate data = LocalDate.now();
+	protected String nome;
 	private String email;
-	private String cpf;
+	protected String cpf;
 	
 	//CONSTRUTOR PADRÃO
 	public Cliente() 
@@ -21,6 +23,13 @@ public class Cliente
 		this.cpf = cpf;
 	}
 	//GETTERS E SETTERS
+	public LocalDate getData() {
+		return data;
+	}
+
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
 	public String getNome() 
 	{
 		return nome;
