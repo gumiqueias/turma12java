@@ -35,6 +35,11 @@ public class ContaEspecial extends ContaCorrente
 	public void reporLimite (double valor)
 	{
 		this.limite += valor;
+		
+		if (this.limite > 500)
+		{
+			this.limite = 500;
+		}
 	}
 	
 }

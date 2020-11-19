@@ -2,7 +2,7 @@ package Classes;
 
 import java.util.Scanner;
 
-public class Conta 
+public abstract class Conta 
 {
 	private int numero;
 	private String cpf_cnpj;
