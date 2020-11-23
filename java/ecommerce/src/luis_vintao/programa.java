@@ -47,7 +47,7 @@ public class programa {
 			for( int x = 0; x<10; x++) {
 				System.out.println("\nENTRE COM O CODIGO DO PRODUTO QUE DESEJA:");
 				codigoProduto = input.nextInt() - 1;
-				if(produtosLista.get(codigoProduto).getQuantidade() == 0) {
+				if(produtosLista.get(codigoProduto).getQuantidade() <= 0) {
 					System.out.println("PRODUTO FORA DE ESTOQUE, DESEJA OUTRO PRODUTO ?");
 					operacao = input.next().toUpperCase().charAt(0);
 					if(operacao =='S') {
@@ -70,9 +70,15 @@ public class programa {
 				produtosLista.get(codigoProduto).retirar(quantidade);
 				System.out.println("DESEJA ADICIONAR OUTRO PRODUTO S/N ?");
 				operacao = input.next().toUpperCase().charAt(0);
-
-				carrinho.add(x,"\t\t\n"+produtosLista.get(codigoProduto).getNome()+"\t\tR$"+produtosLista.get(codigoProduto).precoQuantidade(quantidade)+"\t\t"+quantidade+"\t\t"+cliente1.getData().getDayOfMonth()+"/"+cliente1.getData().getMonthValue()+"/"+cliente1.getData().getYear());
-				pagamento.valorFinal(produtosLista.get(codigoProduto).precoQuantidade(quantidade));
+	
+				carrinho.add(x,"\n"+produtosLista.get(codigoProduto).getNome()+"\t\tR$"+produtosLista.get(codigoProduto).precoQuantidade(quantidade)+"\t\t"+quantidade+"\t\t"+cliente1.getData().getDayOfMonth()+"/"+cliente1.getData().getMonthValue()+"/"+cliente1.getData().getYear());
+				
+				if(quantidade > produtosLista.get(codigoProduto).getQuantidade()) {
+					carrinho.remove(x);
+					x = x -1;
+				} else if(quantidade <= produtosLista.get(codigoProduto).getQuantidade()){
+					pagamento.valorFinal(produtosLista.get(codigoProduto).precoQuantidade(quantidade));
+				}
 				if(operacao == 'S') {
 					
 				} else {
@@ -125,15 +131,16 @@ public class programa {
 		     if (notaFiscal == 'S')
 		     {
 		    	pagamento.notaFiscal1();
-		    	System.out.println(carrinho.toString().replace("[", "").replace("]", "").replace(",", ""));
-		    	System.out.println("--------------------------------------------------------------------");
-				System.out.println("\n                  CLIENTE: "+cliente1.getNome()+"          CPF: "+ cliente1.getCpf()+"               ");
+		    	System.out.println("-----------------------------------------------------------------------");
+		 		System.out.println(carrinho.toString().replace("[", "").replace("]", "").replace(",", ""));
+		 		System.out.println("-----------------------------------------------------------------------");
+		 		System.out.println("\n                  CLIENTE: "+cliente1.getNome()+"             CPF: "+ cliente1.getCpf()+"               ");
 		 		pagamento.notaFiscal2();
 		     }	
 		     
 		     else 
 		     {
-		    	 System.out.print("\n\n------------------------OBRIGADO E VOLTE SEMPRE-----------------------\n\n\n\n");
+		    	 System.out.print("\n\n\n------------------------OBRIGADO E VOLTE SEMPRE-----------------------\n\n\n\n");
 		     }
 		     System.out.println("DESEJA ENTRAR COM UM NOVO CLIENTE ? (S-SIM / N-NÃO)");
 		     operacao = input.next().toUpperCase().charAt(0);

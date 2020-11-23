@@ -1,18 +1,19 @@
 package luis_vintao;
 
+
 public class Produto {
 	
 	private double preco;
 	private String nome;
 	private int codigo;
-	private int quantidade;
+	private int estoque;
 	
 	public Produto(double preco, String nome, int codigo, int quantidade) {
 
 		this.preco = preco;
 		this.nome = nome;
 		this.codigo = codigo;
-		this.quantidade = quantidade;
+		this.estoque = quantidade;
 	}
 	
 	public double getPreco() {
@@ -22,6 +23,7 @@ public class Produto {
 	public String getNome() {
 		return nome;
 	}
+
 
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -36,19 +38,22 @@ public class Produto {
 	}
 
 	public int getQuantidade() {
-		return quantidade;
+		return estoque;
 	}
 
 	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+		this.estoque = quantidade;
 	}
 	
 	public void retirar(int quantidade) {
-		this.quantidade -= quantidade;
-	
+		if(quantidade > this.estoque) {
+			System.out.println("PRODUTO FORA DE ESTOQUE OU LIMITE DE QUANTIDADE EXCEDIDO.");
+		} else if(quantidade <= this.estoque) {
+			this.estoque -= quantidade;
+		}
 	}
-	public double precoQuantidade(int quantidade) {
-		double valorQuantidade = this.preco * quantidade;
+	public double precoQuantidade(int qTotal) {
+		double valorQuantidade = this.preco * qTotal;
 		return valorQuantidade;
 	}
 }
