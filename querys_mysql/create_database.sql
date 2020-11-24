@@ -9,3 +9,6 @@ drop database Ford;
 
 create database Fiat;
 use Fiat;
+
+
+select *from Pessoa;

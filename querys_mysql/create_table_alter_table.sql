@@ -1,3 +1,8 @@
+create database db_fiat;
+use db_fiat;
+
+drop table funcionarios;
+
 create table funcionarios (
 	id int not null auto_increment primary key, #constantes - não pode ser nulo, a chave primaria se relaciona com outras tabelas.
     nome varchar (30) NOT NULL,
@@ -7,7 +12,7 @@ create table funcionarios (
     altura decimal (3,2),
     dia_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP, #pega a hora que o usuário inserir o dado e salva 
     nacionalidade varchar (20) DEFAULT 'Brasil' #default significa padrao
-    );
+    )engine=innodb; #permite arrependimento, como se fosse um ctlr z
     
     describe funcionarios;
     
@@ -15,5 +20,6 @@ create table funcionarios (
     
     alter table funcionarios add column historico char (255) after nome;
 
-    
-    
+    rename table funcionarios to colaboradores;
+	
+    show tables;
