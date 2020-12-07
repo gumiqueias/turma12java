@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="controller.js"></script>
+
+</head>
+<body>
+
+	<a href="index.html"> HOME</a>	|
+	
+	<a href="cadastro.html"> CADASTRO</a>	|
+	
+	<a href="editar.html"> EDITAR</a>	
+
+<hr>
+
+Página de edição<br><br>
+
+	<hr>
+	
+<div ng-app="myApp" ng-controller="myCtrl">
+
+	<table border = "1">
+		<tr>
+			<th>id</th>
+			<th>nome</th>
+			<th>categoria</th>
+			<th>ações</th>
+		</tr>
+		<tr ng-repeat="manutencao in manutencoes">
+			<td>{{manutencao.id}}</td>
+			<td>{{manutencao.nome}}</td>
+			<td>{{manutencao.categoria}}</td>
+			<td>Botão</td>
+		</tr>	
+				
+	</table>
+</div>
+</body>
+</html>

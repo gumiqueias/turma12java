@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>blogPessoal</artifactId>
+	<artifactId>ProjetoIntegrador</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>blogPessoal</name>
+	<name>ProjetoIntegrador</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -37,17 +37,6 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
-		</dependency>
-		
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.6.1</version>
-			</dependency>
-			<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.6.1</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>

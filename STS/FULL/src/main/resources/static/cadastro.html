@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="controller.js"></script>
+
+</head>
+<body>
+
+	<a href="index.html"> HOME</a>	|
+	
+	<a href="cadastro.html"> CADASTRO</a>	|
+	
+	<a href="editar.html"> EDITAR</a>	|
+	
+	<hr>
+
+Página de cadastro<br><br>
+
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<form>
+	
+			Id<br>
+			<input type=text readonly ng-model="id"><br><br>
+		
+			Nome<br>
+			<input type=text required ng-model="nome"><br><br>
+		
+			Categoria<br>
+			<input type=text required ng-model="categoria"><br><br>
+		
+			Data da Compra<br>
+			<input type=date ng-model="data"> <br><br>
+		
+			<button ng-click="salvar()">Salvar</button>
+
+		</form>	
+	</div>
+	
+</body>
+</html>
