@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -79,6 +80,16 @@ public class Controller implements WebMvcConfigurer {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
+	@DeleteMapping ("/delete/{id}")
+	public String remover (@PathVariable Long id) {
+		try {
+			repository.deleteById(id);
+		return "sucesso";
+		} catch (Exception e) {
+			return "Erro: " + e.getLocalizedMessage();			
+		}
+	}
+		
 }
 
 

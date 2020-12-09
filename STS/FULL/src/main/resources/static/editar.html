@@ -18,27 +18,46 @@
 
 <hr>
 
-Página de edição<br><br>
+Página de edição
 
 	<hr>
 	
 <div ng-app="myApp" ng-controller="myCtrl">
 
-	<table border = "1">
-		<tr>
-			<th>id</th>
-			<th>nome</th>
-			<th>categoria</th>
-			<th>ações</th>
-		</tr>
-		<tr ng-repeat="manutencao in manutencoes">
-			<td>{{manutencao.id}}</td>
-			<td>{{manutencao.nome}}</td>
-			<td>{{manutencao.categoria}}</td>
-			<td>Botão</td>
-		</tr>	
-				
-	</table>
-</div>
+<div ng-app="myApp" ng-controller='myCtrl'>
+		
+<!--  entradas -->		
+
+			<p>ID : <input type = "number" ng-model = "id" ></p>
+			<p>Nome : <input type = "text" ng-model = "nome" ></p>
+			<p>Categoria : <input type = "text" ng-model = "categoria" ></p>
+			
+			
+			<button ng-click = "buscarTodos()"> get all </button>
+			<button ng-click = "salvar()"> insert </button>
+			<button ng-click = "delete()"> delete </button>
+			<button ng-click = "put()"> put </button>
+			
+<!--  tabela -->
+		<hr>	
+			<table border="4">
+				<tr>
+					<th>id</th>	
+					<th>nome</th>
+					<th>categoria</th>
+					<th>ações</th>
+				</tr>
+				<tr ng-repeat = "manutencao in manutencoes">
+					<td>{{manutencao.id}}</td>
+					<td>{{manutencao.nome}}</td>
+					<td>{{manutencao.categoria}}</td>
+					<td>editar | excluir</td>
+				</tr>	
+			</table>
+			
+		</div>
+	
+
+	
 </body>
 </html>
