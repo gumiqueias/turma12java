@@ -1,9 +1,9 @@
-package org.generation.blogPessoal.sercice;
+package org.generation.blogPessoal.service;
 
 import java.nio.charset.Charset;
 import java.util.Optional;
 
-import org.apache.tomcat.util.codec.binary.Base64;
+import org.apache.commons.codec.binary.Base64;
 import org.generation.blogPessoal.model.UserLogin;
 import org.generation.blogPessoal.model.Usuario;
 import org.generation.blogPessoal.repository.UsuarioRepository;
@@ -17,28 +17,29 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 	
-	public Usuario CadastrarUsuario (Usuario usuario) {
+	// Criptografa a senha e salva ela dentro do banco de dados
+	public Usuario CadastrarUsuario(Usuario usuario) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
+		// Recebo a senha da classe Usuario e criptografo dentro de senhaEncoder
 		String senhaEncoder = encoder.encode(usuario.getSenha());
+		usuario.setSenha(senhaEncoder);
 		
 		return repository.save(usuario);
-		
 	}
 	
-	public Optional<UserLogin> Logar (Optional<UserLogin> user){
+	public Optional<UserLogin> Logar(Optional<UserLogin> user){
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional <Usuario> usuario = repository.findByUsuario(user.get().getUsuario());
+		Optional<Usuario> usuario = repository.findByUsuario(user.get().getUsuario());
 		
-		if (usuario.isPresent()) {
-			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
-				
+		if(usuario.isPresent()) {
+			if(encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
 				String auth = user.get().getUsuario() + ":" + user.get().getSenha();
-				byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-				String authHeader = "Basic" + new String (encodeAuth);
+				byte[]  encoderAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
+				String authHeader = "Basic " + new String(encoderAuth);
 				
 				user.get().setToken(authHeader);
-				user.get().setNome (usuario.get().getNome());
+				user.get().setNome(usuario.get().getNome());
 				
 				return user;
 			}

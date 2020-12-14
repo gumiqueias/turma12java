@@ -10,6 +10,7 @@ public class UserLogin {
 	
 	private String token;
 
+	// Get e Set
 	public String getNome() {
 		return nome;
 	}
@@ -41,5 +42,5 @@ public class UserLogin {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	
+
 }
