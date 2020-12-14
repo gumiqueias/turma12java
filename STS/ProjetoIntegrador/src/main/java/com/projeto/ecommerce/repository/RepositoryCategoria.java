@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.projeto.ecommerce.model.CategoriaModel;
+import com.projeto.ecommerce.model.Categoria;
 
-public interface RepositoryCategoria extends JpaRepository <CategoriaModel, Long> {
+public interface RepositoryCategoria extends JpaRepository <Categoria, Long> {
 
-	public List <CategoriaModel> findAllByTipoContainingIgnoreCase(String tipo);
+	public List <Categoria> findAllByTipoContainingIgnoreCase(String tipo);
 }
