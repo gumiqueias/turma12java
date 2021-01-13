@@ -1,5 +1,3 @@
-/*Estilo da página index.html*/
-
 .paragrafo
  {
     text-align: center;
@@ -21,8 +19,7 @@
 #menu li a{
     text-decoration: none;
     color: black;
-    font-size: 30px;
-    
+    font-size: 25px; 
 }
 
 #menu li a:hover{
@@ -30,7 +27,7 @@
 }
 
 .p-30{
-    padding: 50px;
+    padding: 30px;
 }
 
 .br-50{
@@ -59,4 +56,7 @@
     font-size: 23px;
 }
 
-/*Estilo da págica contato.html*/
+.fundo{
+    background-image: url("http://arquivo.devmedia.com.br/naoexclusivo/JoelRodrigues/Documentacao/css-background/bg1.jpg");
+}
+
