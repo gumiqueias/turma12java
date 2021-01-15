@@ -15,14 +15,27 @@
 
 <body class="fundo">
 
-    <ul id="menu">
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-        <li>
-            <a href="contato.html">Contato</a>
-        </li>
-    </ul>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-info">
+        <a class="navbar-brand text-light">Meu blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\html\sobre_mim\index.html">Home <span class="sr-only">(página atual)</span></a>
+                </li>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\html\sobre_mim\contato.html">Contato <span class="sr-only">(página atual)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   <br><br><br>
 
     <h1 class="center cor">Entre em contato comigo !!</h1>
 
@@ -41,7 +54,9 @@
                 <textarea name="assunto" id="assunto" cols="50" rows="10" onkeyup="validaAssunto()"></textarea>
                 <div id="txtAssunto"></div>
                 <br>
-                <button onclick="enviar()">Enviar</button>
+                <div class="form-group d-flex justify-content-end">
+                    <button class="btn btn-outline-light">Enviar</button>
+                </div>
             </form>
         </div>
         <div class="ml-50">
