@@ -9,14 +9,30 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <title>Olá, mundo!</title>
+        <style>
+            .tm-social{
+                width: 50px;
+                height: 50px;
+            }
+        </style>  
+        <style>
+            .p-70{
+                padding:80px;
+            }
+        </style>  
+        <style>
+        .p-30{
+            padding:30px;
+        }
+    </style>  
+    <title>Seu Guia</title>
 </head>
 
 <body>
     <!--Menu-->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand text-light">Seu guia.com</a>
+    <div class="container"></div>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-danger font-weight-bold">
+        <a class="navbar-brand ">Seuguia.com</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
             aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon"></span>
@@ -25,7 +41,20 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-light" href="#">Home <span class="sr-only">(página atual)</span></a>
+                    <a class="nav-link text-light" href="#home">Home <span class="sr-only">(página atual)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#fotos">Fotos <span class="sr-only">(página atual)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#dicas">Dicas <span class="sr-only">(página atual)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#cards">Melhores Praias <span class="sr-only">(página
+                            atual)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#form">Fale conosco <span class="sr-only">(página atual)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
@@ -47,22 +76,20 @@
     <!--/Menu-->
 
     <!--Jumbotrom-->
-    <div class="jumbotron jumbotron-fluid bg-secondary">
+    <div class="jumbotron jumbotron-fluid bg-transparent" id="home">
         <div class="container">
-            <h1 class="display-4 text-white">Bem vindo !</h1>
-            <p class="lead text-white-50">Este site é proporcionado para você saber onde ir, com melhor qualidade,
+            <h1 class="display-3 text-dark">Seu guia</h1>
+            <p class="lead text-dark-50">Este site é proporcionado para você saber onde ir, com melhor qualidade,
                 facilidade e bem-estar.</p>
-            <p class="lead text-white-50">Faça bom proveito :)</p>
         </div>
     </div>
     <!--/Jumbotrom-->
 
-    <div class="row">
+    <div class="row p-70" id="fotos">
         <div class="col-md-12">
-            <div class="text-center">
+            <div class="text-center font-italic">
                 <h3>Melhores lugares em São Paulo para suas viagens !</h3>
             </div>
-            <br>
         </div>
     </div>
 
@@ -76,38 +103,18 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100"
-                    src="https://www.guiaviagensbrasil.com/blog/wp-content/uploads/2014/08/foto-praia-do-bonete-ilhabela.jpg"
-                    alt="Bonete - Ilhabela">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-body bg-light">Praia do Bonete - Ilhabela)</h5>
-                    <p class="text-body bg-light">Esta é, sem dúvida, uma das mais belas do estado. Bonete é
-                        completamente selvagem, permeada por
-                        montanhas cobertas por mata nativa que surpreende pelo verde vivo que combina perfeitamente com
-                        o mar também esverdeado</p>
-                </div>
+                    src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\assets\img\praia 4.jpg"
+                    alt="Foto praia">
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100"
-                    src="https://www.guiaviagensbrasil.com/blog/wp-content/uploads/2014/08/foto-praia-de-juquehy-sao-sebastiao.jpg"
-                    alt="JUQUEHY São Sebastião">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-body bg-light">Juquehy - São Sebastião"</h5>
-                    <p class="text-body bg-light">A praia de Juquehy se destaca por ser a mais extensa e plana dentre as
-                        outras. Por isso, é
-                        considerada a melhor para caminhadas despreocupadas pela areia que levam a cenários paradisíacos
-                        e selvagens.</p>
-                </div>
+                    src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\assets\img\praia 5.jpg"
+                    alt="Foto praia">
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100 "
-                    src="https://www.guiaviagensbrasil.com/blog/wp-content/uploads/2014/08/foto-praia-de-maresias-sao-sebastiao.jpg"
-                    alt="MARESIAS - São Sebastião">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-body bg-light">Maresias - São Sebastião</h5>
-                    <p class="text-body bg-light">Maresias é o point da galera jovem e de azaração. É considerada a
-                        praia mais badalada de todo
-                        litoral norte e também uma das mais belas no quesito natureza.</p>
-                </div>
+                    src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\assets\img\praia 6.jpg"
+                    alt="Foto praia">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -120,24 +127,26 @@
         </a>
     </div>
     <!--/Carrossel-->
-
     <!--Texto e vídeo-->
-    <div class="container">
-        <div class="row mt-5 mb-5 text-center">
-            <div class="col-md-6">
-                <h3>Testo teste</h3>
+    <div class="container p-70" id="dicas">
+        <div class="row mt-5 mb-5 text-justify">
+            <div class="col-md-6 ">
+                <h3>Dicas de viagem</h3>
                 <p>
-                    Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi nada. Tá deprimidis, eu
+                    Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi nada. Tá deprimidis,
+                    eu
                     conheço uma cachacis que pode alegrar sua vidis. Admodum accumsan disputationi eu sit. Vide electram
                     sadipscing et per. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.
                 </p>
                 <p>
-                    Viva Forevis aptent taciti sociosqu ad litora torquent. Quem num gosta di mé, boa gentis num é. Paisis,
+                    Viva Forevis aptent taciti sociosqu ad litora torquent. Quem num gosta di mé, boa gentis num é.
+                    Paisis,
                     filhis, espiritis santis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e
                     fermentis.
                 </p>
                 <p>
-                    Viva Forevis aptent taciti sociosqu ad litora torquent. Quem num gosta di mé, boa gentis num é. Paisis,
+                    Viva Forevis aptent taciti sociosqu ad litora torquent. Quem num gosta di mé, boa gentis num é.
+                    Paisis,
                     filhis, espiritis santis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e
                     fermentis.
                 </p>
@@ -149,35 +158,131 @@
                     allowfullscreen></iframe>
             </div>
         </div>
-    <!--/Texto e vídeo-->
+        <!--/Texto e vídeo-->
 
-    <div class="card-group">
-        <div class="card">
-          <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">Título do card</h5>
-            <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
-            <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
-          </div>
+        <div class="card-group p-70" id="cards">
+            <div class="card p-3">
+                <img class="card-img-top"
+                    src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\assets\img\praia 1.jpeg"
+                    alt="Foto praia">
+                <div class=" card-body">
+                    <h5 class="card-title ">Praia do forte</h5>
+                    <p class="card-text">Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se
+                        pirulitá. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Mé faiz elementum girarzis,
+                        nisi eros vermeio. Quem manda na minha terra sou euzis!</p>
+                    <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
+                </div>
+            </div>
+            <div class="card p-3">
+                <img class="card-img-top"
+                    src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\assets\img\praia 2.jpeg"
+                    alt="Foto praia">
+                <div class="card-body">
+                    <h5 class="card-title">Praia das astúrias</h5>
+                    <p class="card-text">Detraxit consequat et quo num tendi nada. Interessantiss quisso pudia ce
+                        receita de bolis, mais bolis eu num gostis. Tá deprimidis, eu conheço uma cachacis que pode
+                        alegrar sua vidis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e
+                        fermentis.</p>
+                    <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
+                </div>
+            </div>
+            <div class="card p-3">
+                <img class="card-img-top"
+                    src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\assets\img\praia 3.jpeg"
+                    alt="Foto praia">
+                <div class="card-body">
+                    <h5 class="card-title">Praia das pedras</h5>
+                    <p class="card-text">Aenean aliquam molestie leo, vitae iaculis nisl. Interagi no mé, cursus quis,
+                        vehicula ac nisi. Suco de cevadiss deixa as pessoas mais interessantis. Diuretics paradis num
+                        copo é motivis de denguis.</p>
+                    <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">Título do card</h5>
-            <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-            <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
-          </div>
+        <!--Formulário-->
+        <div class="row p-30" id="form">
+            <div class="col-md-12">
+                <div class="text-center font-italic">
+                    <br>
+                    <br>
+                    <h1>Envie sua opinião</h1>
+                </div>
+                <br>
+            </div>
         </div>
-        <div class="card">
-          <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">Título do card</h5>
-            <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda maior que o primeiro, para mostrar a altura igual, em ação.</p>
-            <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
-          </div>
+        <div class="row">
+            <div class="col-md-6 font-weight-bold">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Favor preencha os campos abaixo:</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Insira seu e-mail">
+                    </div>
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Nome">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Sobrenome">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group">
+                        <br>
+                        <label for="exampleFormControlTextarea1">Digite sua opinião:</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            placeholder="Máximo de 100 caracteres..."></textarea>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                        <button class="btn btn-outline-secondary">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col md-6">
+                <iframe class="w-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.1194516338214!2d-46.71948488447777!3d-23.45615536360188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cefbd0e967d02f%3A0x9690ca55de6e3094!2sR.%20Sim%C3%A3o%20Ragusa%2C%20260%20-%20Jardim%20Maggi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002982-140!5e0!3m2!1spt-BR!2sbr!4v1610385499768!5m2!1spt-BR!2sbr"
+                    width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0" onmousemove="mapaZoom()" onmouseout="mapaNormal()" id="mapa"></iframe>
+            </div>
         </div>
-      </div>
+        <hr>
+        <footer>
+            <div class="row mb-3 ">
+                <div class="col-md-12 d-flex justify-content-center">
+
+                    <a href="https://www.facebook.com/Gustavomiqueias/" target="_blank" class="p-3">
+                        <img class="tm-social"
+                            src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\assets\img\facebook.png"
+                            alt="Logo do Facebook">
+                    </a>
+
+                    <a href="https://www.instagram.com/gumiqueias" target="_blank" class="p-3">
+                        <img class="tm-social"
+                            src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\assets\img\instagram.png"
+                            alt="Logo do Instagram">
+                    </a>
+
+                    <a href="www.linkedin.com/in/gumiqueias" target="_blank" class="p-3">
+                        <img class="tm-social"
+                            src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\assets\img\linkedin.png"
+                            alt="Logo do Linkedin">
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center">
+                        Todos os direitos reservados para Gustavo Miquéias &copy
+                    </p>
+                </div>
+            </div>
+        </footer>
+
     </div>
+
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
