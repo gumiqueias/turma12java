@@ -84,15 +84,6 @@
         </div>
     </div>
     <!--/Jumbotrom-->
-
-    <div class="row p-70" id="fotos">
-        <div class="col-md-12">
-            <div class="text-center font-italic">
-                <h3>Melhores lugares em São Paulo para suas viagens !</h3>
-            </div>
-        </div>
-    </div>
-
     <!--Carrossel-->
     <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
         <ol class="carousel-indicators">
@@ -100,7 +91,7 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
-        <div class="carousel-inner">
+        <div class="carousel-inner" id="fotos">
             <div class="carousel-item active">
                 <img class="d-block w-100"
                     src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\assets\img\praia 4.jpg"
@@ -215,37 +206,42 @@
                 <form>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Favor preencha os campos abaixo:</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                        <input type="email" class="form-control" id="email" onkeyup="validaEmail()"
                             placeholder="Insira seu e-mail">
+                            <div id="txtEmail"></div>
                     </div>
                     <form>
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Nome">
+                                <input type="text" class="form-control" id="nome" onkeyup="validaNome()" placeholder="Nome">
+                                <div id="txtNome"></div>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Sobrenome">
+                                <input type="text" class="form-control" id="sobrenome" onkeyup="validaSobrenome()" placeholder="Sobrenome">
+                                <div id="txtSobrenome"></div>
                             </div>
                         </div>
                     </form>
                     <div class="form-group">
                         <br>
                         <label for="exampleFormControlTextarea1">Digite sua opinião:</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        <textarea class="form-control" id="opiniao" rows="6" onkeyup="validaOpiniao()"                     
                             placeholder="Máximo de 100 caracteres..."></textarea>
+                            <div id="txtOpiniao"></div>
                     </div>
                     <div class="form-group d-flex justify-content-end">
-                        <button class="btn btn-outline-secondary">Enviar</button>
+                        <button class="btn btn-outline-secondary" onclick="enviar()" >Enviar</button>
                     </div>
                 </form>
             </div>
-            <div class="col md-6">
-                <iframe class="w-100"
+
+                <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.1194516338214!2d-46.71948488447777!3d-23.45615536360188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cefbd0e967d02f%3A0x9690ca55de6e3094!2sR.%20Sim%C3%A3o%20Ragusa%2C%20260%20-%20Jardim%20Maggi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002982-140!5e0!3m2!1spt-BR!2sbr!4v1610385499768!5m2!1spt-BR!2sbr"
-                    width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0" onmousemove="mapaZoom()" onmouseout="mapaNormal()" id="mapa"></iframe>
-            </div>
+                    width="500" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0" ></iframe>
+            
         </div>
+    </div>
         <hr>
         <footer>
             <div class="row mb-3 ">
@@ -294,6 +290,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+
+        <script src="C:\Users\gumiq\Documents\Generation Brasil\turma12java\fundamentos-web\html\landing_page\script.js"></script>
 </body>
 
 </html>
