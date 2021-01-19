@@ -1,0 +1,9 @@
+#img-bg{
+    background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg');
+
+    min-height: 1000px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
